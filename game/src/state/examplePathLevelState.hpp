@@ -2,7 +2,7 @@
 #define __EXAMPLEPATHLEVELSTATE_HPP
 
 #include <olcTemplate/game/coordinates.hpp>
-#include <olcTemplate/game/src/state/levelState.hpp>
+#include <game/src/state/levelState.hpp>
 #define SOL_ALL_SAFETIES_ON 1
 #include <olcTemplate/sdk/sol2-3.3.0/sol.hpp>
 

@@ -76,6 +76,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -91,7 +92,6 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -144,6 +144,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -159,7 +160,6 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -212,6 +212,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -227,7 +228,6 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -280,6 +280,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -295,7 +296,6 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -348,6 +348,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -363,7 +364,6 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -416,6 +416,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -431,7 +432,6 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -485,6 +485,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -500,7 +501,6 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -554,6 +554,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -569,7 +570,6 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -623,6 +623,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
+	$(OBJDIR)/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/animation.o \
 	$(OBJDIR)/olcTemplate/game/src/assets.o \
 	$(OBJDIR)/olcTemplate/game/src/coordinates.o \
@@ -638,7 +639,6 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
-	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
@@ -763,6 +763,10 @@ $(OBJDIR)/game/src/state/src/exampleWalkLevelState.o: ../game/src/state/src/exam
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
+$(OBJDIR)/game/src/state/src/levelState.o: ../game/src/state/src/levelState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/state/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
 $(OBJDIR)/olcTemplate/game/src/animation.o: ../olcTemplate/game/src/animation.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
@@ -820,10 +824,6 @@ $(OBJDIR)/olcTemplate/game/src/sound.o: ../olcTemplate/game/src/sound.cpp $(GCH)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/olcTemplate/game/src/state/src/introState.o: ../olcTemplate/game/src/state/src/introState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/state/src
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
-
-$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o: ../olcTemplate/game/src/state/src/levelState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/state/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 

@@ -514,7 +514,6 @@
     <ClInclude Include="..\olcTemplate\game\src\state\mainMenuState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\state.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\introState.hpp" />
-    <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol\config.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp" />
@@ -525,6 +524,7 @@
     <ClInclude Include="..\game\src\state\exampleScreenElementsLevelState.hpp" />
     <ClInclude Include="..\game\src\state\examplePathLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleWalkLevelState.hpp" />
+    <ClInclude Include="..\game\src\state\levelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -568,8 +568,6 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
-    </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\imgui_demo.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\imgui_widgets.cpp">
@@ -599,6 +597,8 @@
     <ClCompile Include="..\game\src\state\src\exampleScreenElementsLevelState.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\game\src\state\src\levelState.cpp">
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
