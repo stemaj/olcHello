@@ -121,25 +121,18 @@ void ExampleCollisionState::LoadLevelData()
   _circleRadius = LS.Float("circle_radius");
   _circleType = LS.Int("circle_type");
   _circleDensity = LS.Float("circle_density");
+  
+  _rectCenter = LS.PTFloat("rect_center");
+  _rectSize = LS.PTFloat("rect_size");
+  _rectAngle = LS.Float("rect_angle");
+  _rectType = LS.Int("rect_type");
+  _rectDensity = LS.Float("rect_density");
 
-  // arr = _lua["rect_center"].get<std::array<float,2>>();
-  // _rectCenter = { arr[0], arr[1] };
-  // arr = _lua["rect_size"].get<std::array<float,2>>();
-  // _rectSize = { arr[0], arr[1] };
-  // _rectAngle = _lua["rect_angle"].get<float>();
-  // _rectType = _lua["rect_type"].get<int>();
-  // _rectDensity = _lua["rect_density"].get<float>();
-
-  // arr = _lua["tri_center"].get<std::array<float,2>>();
-  // _triCenter = { arr[0], arr[1] };
-  // auto vec = _lua["tri_polygon"].get<std::array<std::array<float,2>,4>>();
-  // for (int i = 0; i < 4; i++)
-  // {
-  //   _triShape[i] = { vec[i][0], vec[i][1] };
-  // }
-  // _triType = _lua["tri_type"].get<int>();
-  // _triDensity = _lua["tri_density"].get<float>();
-  // _triForce = _lua["tri_force"].get<float>();
+  _triCenter = LS.PTFloat("tri_center");
+  _triShape = LS.PTFloat4("tri_polygon");
+  _triType = LS.Int("tri_type");
+  _triDensity = LS.Float("tri_density");
+  _triForce = LS.Float("tri_force");
 }
 
 void ExampleCollisionState::SaveLevelData()
@@ -148,30 +141,15 @@ void ExampleCollisionState::SaveLevelData()
 
   LS.SavePTFloat("circle_center", _circleCenter);
   LS.SaveEmpty();
-
   
-
+  LS.SavePTFloat("rect_center", _rectCenter);
+  LS.SaveFloat("rect_angle", _rectAngle);
+  LS.SaveEmpty();
+  
+  LS.SavePTFloat("tri_center", _triCenter);
+  LS.SavePTFloat4("tri_polygon", _triShape);
+  
   LS.End();
-
-  // std::ofstream outFile("scripts/profile/1/exampleCollision.lua");
-  // if (!outFile)
-  // {
-  //   std::cout << "Unable to open file for writing";
-  //   return;
-  // }
-
-  // //LS.saveFloat(outFile, SCALE);
-
-
-  // outFile << "scale = " << SCALE << "\n";
-  
-  // outFile << "triCenter = { ";
-  // outFile << int(_triCenter.x * SCALE);
-  // outFile << "/scale, ";
-  // outFile << int(_triCenter.y * SCALE);
-  // outFile << "/scale }\n";
-
-  // outFile.close();
 }
 
 void ExampleCollisionState::InitValues()
