@@ -101,27 +101,26 @@ Render* ExampleCollisionState::GetRender()
 void ExampleCollisionState::LoadLevelData()
 {
   std::cout << "loading" << std::endl;
-  LS.Init("exampleCollision");
-  SCALE = LS.Float("scale");
-
-  // _velocityIterations = _lua["velocity_iterations"].get<int>();
-  // _positionIterations = _lua["position_iterations"].get<int>();
   
-  // _gravityY = _lua["gravity_y"].get<float>();
-
-  // std::array<float,2> arr = _lua["ground_center"].get<std::array<float,2>>();
-  // _groundCenter = {arr[0], arr[1] };
-  // arr = _lua["ground_size"].get<std::array<float,2>>();
-  // _groundSize = { arr[0], arr[1] };
-  // _groundAngle = _lua["ground_angle"].get_or(0.0f);
-  // _groundType = _lua["ground_type"].get<int>();
-  // _groundDensity = _lua["ground_density"].get<float>();
-
-  // arr = _lua["circle_center"].get<std::array<float,2>>();
-  // _circleCenter = { arr[0], arr[1] };
-  // _circleRadius = _lua["circle_radius"].get<float>();
-  // _circleType = _lua["circle_type"].get<int>();
-  // _circleDensity = _lua["circle_density"].get<float>();
+  LS.Init("exampleCollision");
+  
+  SCALE = LS.Float("scale");
+  
+  _velocityIterations = LS.Int("velocity_iterations");
+  _positionIterations = LS.Int("position_iterations");
+  
+  _gravityY = LS.Float("gravity_y");
+  
+  _groundCenter = LS.PTFloat("ground_center");
+  _groundSize = LS.PTFloat("ground_size");
+  _groundAngle = LS.Float("ground_angle");
+  _groundType = LS.Int("ground_type");
+  _groundDensity = LS.Float("ground_density");
+  
+  _circleCenter = LS.PTFloat("circle_center");
+  _circleRadius = LS.Float("circle_radius");
+  _circleType = LS.Int("circle_type");
+  _circleDensity = LS.Float("circle_density");
 
   // arr = _lua["rect_center"].get<std::array<float,2>>();
   // _rectCenter = { arr[0], arr[1] };
@@ -147,7 +146,10 @@ void ExampleCollisionState::SaveLevelData()
 {
   std::cout << "saving" << std::endl;
 
-  LS.SaveFloat("scale", SCALE);
+  LS.SavePTFloat("circle_center", _circleCenter);
+  LS.SaveEmpty();
+
+  
 
   LS.End();
 

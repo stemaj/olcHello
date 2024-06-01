@@ -6,7 +6,7 @@
 #include <olcTemplate/game/src/tools/pathfinding.hpp>
 #include <olcTemplate/game/src/tools/pathfollower.hpp>
 #include <memory>
-
+#include <iostream>
 namespace stemaj {
 
 class LevelRender;

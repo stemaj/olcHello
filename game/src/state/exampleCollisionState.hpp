@@ -33,25 +33,25 @@ public:
   PT<float> _groundSize = {0.f,0.f};
   float _groundAngle = 0.0f;
   int _groundType = 0;
-  float _groundDensity = 0;
+  float _groundDensity = 0.0f;
   std::array<PT<float>,4> _groundShape;
 
   PT<float> _circleCenter = {0.f,0.f};
   float _circleRadius = 0.0f;
   int _circleType = 0;
-  float _circleDensity = 0;
+  float _circleDensity = 0.0f;
 
   PT<float> _rectCenter = {0.f,0.f};
   PT<float> _rectSize = {0.f,0.f};
   float _rectAngle = 0.0f;
   int _rectType = 0;
-  float _rectDensity = 0;
+  float _rectDensity = 0.0f;
   std::array<PT<float>,4> _rectShape;
 
   PT<float> _triCenter = {0.f,0.f};
   std::array<PT<float>,4> _triShape;
   int _triType = 0;
-  float _triDensity = 0;
+  float _triDensity = 0.0f;
 
   b2Body* _triBodyPtr = nullptr;
 
