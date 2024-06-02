@@ -138,18 +138,20 @@ void ExampleCollisionState::LoadLevelData()
 void ExampleCollisionState::SaveLevelData()
 {
   std::cout << "saving" << std::endl;
+  
+  LS.SaveStart("exampleCollision");
 
-  LS.SavePTFloat("circle_center", _circleCenter);
-  LS.SaveEmpty();
-  
-  LS.SavePTFloat("rect_center", _rectCenter);
-  LS.SaveFloat("rect_angle", _rectAngle);
-  LS.SaveEmpty();
-  
+//  LS.SavePTFloat("circle_center", _circleCenter);
+//  LS.SaveEmpty();
+//  
+//  LS.SavePTFloat("rect_center", _rectCenter);
+//  LS.SaveFloat("rect_angle", _rectAngle);
+//  LS.SaveEmpty();
+//  
   LS.SavePTFloat("tri_center", _triCenter);
   LS.SavePTFloat4("tri_polygon", _triShape);
   
-  LS.End();
+  LS.SaveEnd();
 }
 
 void ExampleCollisionState::InitValues()
