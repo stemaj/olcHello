@@ -608,6 +608,7 @@
     <None Include="..\scripts\examplePathLevel.lua" />
     <None Include="..\scripts\settings.lua" />
     <None Include="..\scripts\mainMenu.lua" />
+    <None Include="..\scripts\profile\1\exampleCollision.lua" />
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf" />
     <None Include="..\assets\wav\1.wav" />
   </ItemGroup>

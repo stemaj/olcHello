@@ -27,8 +27,7 @@ rect_angle = math.pi / 5
 rect_type = 2
 rect_density = 1
 
-tri_center = { 60/scale, 200/scale }
-tri_polygon = { { -20/scale, -20/scale }, { 20/scale, -20/scale }, { 3 / scale, 10/scale }, { -3 / scale, 10/scale } }
+tri_polygon = { { 209/scale, 24/scale }, { 200/scale, 15/scale }, { 191/scale, 16/scale }, { 200/scale, 25/scale } }
 tri_type = 2
 tri_density = 1
 tri_force = 60

@@ -8,7 +8,7 @@
       "name": "Debug",
       "type": "gdb",
       "request": "launch",
-      "target": "./solution/bin/Debug/OlcTemplate",
+      "target": "./solution/bin/Debug/OlcHello",
       "cwd": "${workspaceRoot}",
       "valuesFormatting": "parseText"
     }

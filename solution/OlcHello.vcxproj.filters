@@ -121,6 +121,12 @@
     <Filter Include="scripts">
       <UniqueIdentifier>{6D076287-D9E6-E022-E2FE-6BF94E5D4784}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scripts\profile">
+      <UniqueIdentifier>{FAAC9670-6638-0435-6F49-8729DB536035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scripts\profile\1">
+      <UniqueIdentifier>{87DFF5F0-F3F5-F386-3C6D-7FA8A8C2C40E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="assets\png">
       <UniqueIdentifier>{3902CEA8-25BA-0FF6-8EC1-E8517A98AAE6}</UniqueIdentifier>
     </Filter>
@@ -147,6 +153,9 @@
     </None>
     <None Include="..\scripts\mainMenu.lua">
       <Filter>scripts</Filter>
+    </None>
+    <None Include="..\scripts\profile\1\exampleCollision.lua">
+      <Filter>scripts\profile\1</Filter>
     </None>
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf">
       <Filter>assets\fonts</Filter>

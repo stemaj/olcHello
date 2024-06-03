@@ -9,6 +9,7 @@
 #include <olcTemplate/game/loadsave.hpp>
 #include <memory>
 #include <olcTemplate/sdk/box2d/include/box2d.h>
+#include <olcTemplate/sdk/imgui-1.90.4/imgui.h>
 
 using namespace stemaj;
 
@@ -81,7 +82,6 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
           auto vertex = bodyListPtr->GetWorldPoint(shape->m_vertices[i]);
           _triShape[i] = { vertex.x, vertex.y };
         }
-        _triCenter = { bodyListPtr->GetPosition().x, bodyListPtr->GetPosition().y };
         b2Vec2 force = {_force.x * fElapsedTime,_force.y * fElapsedTime};
         _triBodyPtr->ApplyForceToCenter(force, true);
       }
@@ -90,6 +90,16 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
   }
 
   _world->Step(fElapsedTime, _velocityIterations, _positionIterations);
+
+  ImGui::Begin("Collision Debug");
+  if (ImGui::BeginListBox("Shape", ImVec2(0, _triShape.size() * 25)))
+  {
+    for (const auto& point : _triShape)
+      ImGui::Text("(%f, %f)", point.x*SCALE, point.y*SCALE);
+    ImGui::EndListBox();
+  }
+  ImGui::End();
+
   return ChangeLevel(input, fElapsedTime);
 }
 
@@ -128,7 +138,6 @@ void ExampleCollisionState::LoadLevelData()
   _rectType = LS.Int("rect_type");
   _rectDensity = LS.Float("rect_density");
 
-  _triCenter = LS.PTFloat("tri_center");
   _triShape = LS.PTFloat4("tri_polygon");
   _triType = LS.Int("tri_type");
   _triDensity = LS.Float("tri_density");
@@ -141,14 +150,6 @@ void ExampleCollisionState::SaveLevelData()
   
   LS.SaveStart("exampleCollision");
 
-//  LS.SavePTFloat("circle_center", _circleCenter);
-//  LS.SaveEmpty();
-//  
-//  LS.SavePTFloat("rect_center", _rectCenter);
-//  LS.SaveFloat("rect_angle", _rectAngle);
-//  LS.SaveEmpty();
-//  
-  LS.SavePTFloat("tri_center", _triCenter);
   LS.SavePTFloat4("tri_polygon", _triShape);
   
   LS.SaveEnd();
@@ -203,7 +204,6 @@ void ExampleCollisionState::InitValues()
 
   b2BodyDef triBodyDef;
   triBodyDef.type = (b2BodyType)_triType;
-  triBodyDef.position.Set(_triCenter.x, _triCenter.y);
   triBodyDef.linearDamping = 100.0f; // Keine Daempfung
   _triBodyPtr = _world->CreateBody(&triBodyDef);
   b2PolygonShape triShape;
