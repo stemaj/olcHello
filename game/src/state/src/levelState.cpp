@@ -27,42 +27,33 @@ std::optional<std::unique_ptr<State>> LevelState::Update(const Input& input, flo
 
 std::optional<std::unique_ptr<State>> LevelState::ChangeLevel(const Input& input, float fElapsedTime)
 {
-  if (!_fader.IsFading())
+  if (input.k1Pressed)
   {
-    if (input.k1Pressed)
-    {
-      _fader.StartFadeOut();
-      _levelToChange = std::make_unique<ExampleCollisionState>();
-    }
-    if (input.k2Pressed)
-    {
-      _fader.StartFadeOut();
-      _levelToChange = std::make_unique<ExamplePathLevelState>();
-    }
-    if (input.k3Pressed)
-    {
-      _fader.StartFadeOut();
-      _levelToChange = std::make_unique<ExampleWalkLevelState>();
-    }
-    if (input.k4Pressed)
-    {
-      _fader.StartFadeOut();
-      _levelToChange = std::make_unique<ExampleScreenElementsLevelState>();
-    }
-    if (input.k5Pressed)
-    {
-      _fader.StartFadeOut();
-      _levelToChange = std::make_unique<ExampleDialogState>();
-    }
+    _fader.StartFadeOut();
+    _levelToChange = std::make_unique<ExampleCollisionState>();
   }
-  else
+  if (input.k2Pressed)
   {
-    _fader.Update(fElapsedTime);
-    if (!_fader.IsFading())
-    {
-      return std::move(_levelToChange);
-    }
+    _fader.StartFadeOut();
+    _levelToChange = std::make_unique<ExamplePathLevelState>();
+  }
+  if (input.k3Pressed)
+  {
+    _fader.StartFadeOut();
+    _levelToChange = std::make_unique<ExampleWalkLevelState>();
+  }
+  if (input.k4Pressed)
+  {
+    _fader.StartFadeOut();
+    _levelToChange = std::make_unique<ExampleScreenElementsLevelState>();
+  }
+  if (input.k5Pressed)
+  {
+    _fader.StartFadeOut();
+    _levelToChange = std::make_unique<ExampleDialogState>();
   }
 
-  return std::nullopt;  
+  _fader.Update(fElapsedTime);
+
+  return _fader.IsTurning() ? std::move(_levelToChange) : std::nullopt;
 }
