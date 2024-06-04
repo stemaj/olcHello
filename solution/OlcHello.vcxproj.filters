@@ -732,11 +732,17 @@
     <ClInclude Include="..\game\src\render\exampleCollisionRender.hpp">
       <Filter>game\src\render</Filter>
     </ClInclude>
+    <ClInclude Include="..\game\src\render\exampleDialogRender.hpp">
+      <Filter>game\src\render</Filter>
+    </ClInclude>
     <ClInclude Include="..\game\src\render\exampleScreenElementsLevelRender.hpp">
       <Filter>game\src\render</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\render\examplePathLevelRender.hpp">
       <Filter>game\src\render</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\src\state\exampleDialogState.hpp">
+      <Filter>game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\state\exampleScreenElementsLevelState.hpp">
       <Filter>game\src\state</Filter>
@@ -836,6 +842,9 @@
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\backends\imgui_impl_opengl2.cpp">
       <Filter>olcTemplate\sdk\imgui-1.90.4\backends</Filter>
     </ClCompile>
+    <ClCompile Include="..\game\src\render\src\exampleDialogRender.cpp">
+      <Filter>game\src\render\src</Filter>
+    </ClCompile>
     <ClCompile Include="..\game\src\render\src\exampleCollisionRender.cpp">
       <Filter>game\src\render\src</Filter>
     </ClCompile>
@@ -855,6 +864,9 @@
       <Filter>game\src\state\src</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleScreenElementsLevelState.cpp">
+      <Filter>game\src\state\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\src\state\src\exampleDialogState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">

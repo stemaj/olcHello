@@ -4,6 +4,7 @@
 #include <game/src/state/examplePathLevelState.hpp>
 #include <game/src/state/exampleWalkLevelState.hpp>
 #include <game/src/state/exampleScreenElementsLevelState.hpp>
+#include <game/src/state/exampleDialogState.hpp>
 #include <optional>
 #include <olcTemplate/sdk/imgui-1.90.4/imgui.h>
 
@@ -47,6 +48,11 @@ std::optional<std::unique_ptr<State>> LevelState::ChangeLevel(const Input& input
     {
       _fader.StartFadeOut();
       _levelToChange = std::make_unique<ExampleScreenElementsLevelState>();
+    }
+    if (input.k5Pressed)
+    {
+      _fader.StartFadeOut();
+      _levelToChange = std::make_unique<ExampleDialogState>();
     }
   }
   else

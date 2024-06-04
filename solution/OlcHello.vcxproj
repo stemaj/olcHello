@@ -519,8 +519,10 @@
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp" />
     <ClInclude Include="..\game\src\render\exampleWalkLevelRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleCollisionRender.hpp" />
+    <ClInclude Include="..\game\src\render\exampleDialogRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleScreenElementsLevelRender.hpp" />
     <ClInclude Include="..\game\src\render\examplePathLevelRender.hpp" />
+    <ClInclude Include="..\game\src\state\exampleDialogState.hpp" />
     <ClInclude Include="..\game\src\state\exampleScreenElementsLevelState.hpp" />
     <ClInclude Include="..\game\src\state\examplePathLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleWalkLevelState.hpp" />
@@ -582,6 +584,8 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\backends\imgui_impl_opengl2.cpp">
     </ClCompile>
+    <ClCompile Include="..\game\src\render\src\exampleDialogRender.cpp">
+    </ClCompile>
     <ClCompile Include="..\game\src\render\src\exampleCollisionRender.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\render\src\examplePathLevelRender.cpp">
@@ -595,6 +599,8 @@
     <ClCompile Include="..\game\src\state\src\examplePathLevelState.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleScreenElementsLevelState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\game\src\state\src\exampleDialogState.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
     </ClCompile>

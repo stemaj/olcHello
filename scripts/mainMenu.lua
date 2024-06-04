@@ -1,8 +1,8 @@
-headerText = "Main Menu"
-headerColor = {0.0, 1.0, 0.0, 1.0}
+header_text = "Main Menu"
+header_color = {0.0, 1.0, 0.0, 1.0}
+header_position = { 0.05, 0.05 }
 
--- Level Ids
-k1 = 1
-k2 = 2
-k3 = 3
-k4 = 4
+additionals = {
+  [0] = {"text", {0.05, 0.90}, "Press [SPACE] to Start"},
+  [1] = {"text", {0.05, 0.95}, "Press [ESC] to Quit"},
+}
