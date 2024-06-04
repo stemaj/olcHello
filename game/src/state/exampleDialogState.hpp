@@ -17,6 +17,19 @@ public:
   std::optional<std::unique_ptr<State>> Update(const Input& input, float fElapsedTime) override;
   Render* GetRender() override;
 
+  struct DialogNode
+  {
+    std::string speaker;
+    std::string text;
+    float duration;
+    std::vector<std::pair<std::string, int>> options;
+    int next = -1;
+  };
+  std::vector<DialogNode> dialogNodes;
+  int currentNode = 0;
+  float elapsedTime = 0.0f;
+  bool displayingOptions = false;
+
 private:
   void LoadLevelData() override;
   void SaveLevelData() override;

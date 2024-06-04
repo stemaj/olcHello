@@ -14,6 +14,27 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
 
   pge->Clear(olc::VERY_DARK_CYAN);
 
+  if (dialogLevel->currentNode == -1) return;
+
+  ExampleDialogState::DialogNode &node = 
+    dialogLevel->dialogNodes[dialogLevel->currentNode];
+  if (dialogLevel->displayingOptions)
+  {
+    float y = 10;
+    for (size_t i = 0; i < node.options.size(); ++i)
+    {
+      pge->DrawStringDecal({10, y}, 
+        std::to_string(i + 1) + ". " + node.options[i].first, 
+        olc::YELLOW);
+      y += 10;
+    }
+  }
+  else
+  {
+    pge->DrawStringDecal( {10, 10}, 
+      node.speaker + ": " + node.text, olc::WHITE);
+  }
+
   // auto font = FT.Font("CutiePatootie-Rgjv", FontSize::NORMAL);
   // auto r = font->RenderStringToDecal(utf8::utf8to32(std::string("Ä Bik ß")), olc::GREEN);
   // pge->DrawDecal({ 200,80 }, r,{1.0f,1.0f}, olc::GREEN);
