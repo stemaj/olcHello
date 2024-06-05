@@ -508,6 +508,7 @@
     <ClInclude Include="..\olcTemplate\game\src\render\mainMenuRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\introRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\helper\olcHelper.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\tools\dialog.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfinding.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfollower.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\fader.hpp" />
@@ -562,6 +563,8 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\pathfollower.cpp">
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\tools\src\dialog.cpp">
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\fader.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\engine\src\olcPixelGameEngine.cpp">
@@ -613,6 +616,7 @@
     <None Include="..\scripts\exampleCollision.lua" />
     <None Include="..\scripts\examplePathLevel.lua" />
     <None Include="..\scripts\settings.lua" />
+    <None Include="..\scripts\exampleDialog.lua" />
     <None Include="..\scripts\mainMenu.lua" />
     <None Include="..\scripts\profile\1\exampleCollision.lua" />
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf" />

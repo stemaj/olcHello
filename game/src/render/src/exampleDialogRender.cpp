@@ -16,6 +16,8 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
 
   if (dialogLevel->currentNode == -1) return;
 
+  auto font = FT.Font("CutiePatootie-Rgjv", FontSize::NORMAL);
+
   ExampleDialogState::DialogNode &node = 
     dialogLevel->dialogNodes[dialogLevel->currentNode];
   if (dialogLevel->displayingOptions)
@@ -23,19 +25,16 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
     float y = 10;
     for (size_t i = 0; i < node.options.size(); ++i)
     {
-      pge->DrawStringDecal({10, y}, 
-        std::to_string(i + 1) + ". " + node.options[i].first, 
-        olc::YELLOW);
-      y += 10;
+      auto r = font->RenderStringToDecal(utf8::utf8to32(
+        std::to_string(i + 1) + ". " + node.options[i].first), olc::YELLOW);
+      pge->DrawDecal({10, y}, r);
+      y += (r->sprite->height+10);
     }
   }
   else
   {
-    pge->DrawStringDecal( {10, 10}, 
-      node.speaker + ": " + node.text, olc::WHITE);
+    auto r = font->RenderStringToDecal(utf8::utf8to32(
+      node.speaker + ": " + node.text), olc::WHITE);
+    pge->DrawDecal({10, 10}, r);
   }
-
-  // auto font = FT.Font("CutiePatootie-Rgjv", FontSize::NORMAL);
-  // auto r = font->RenderStringToDecal(utf8::utf8to32(std::string("Ä Bik ß")), olc::GREEN);
-  // pge->DrawDecal({ 200,80 }, r,{1.0f,1.0f}, olc::GREEN);
 }

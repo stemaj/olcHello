@@ -151,6 +151,9 @@
     <None Include="..\scripts\settings.lua">
       <Filter>scripts</Filter>
     </None>
+    <None Include="..\scripts\exampleDialog.lua">
+      <Filter>scripts</Filter>
+    </None>
     <None Include="..\scripts\mainMenu.lua">
       <Filter>scripts</Filter>
     </None>
@@ -699,6 +702,9 @@
     <ClInclude Include="..\olcTemplate\game\src\render\helper\olcHelper.hpp">
       <Filter>olcTemplate\game\src\render\helper</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\tools\dialog.hpp">
+      <Filter>olcTemplate\game\src\tools</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfinding.hpp">
       <Filter>olcTemplate\game\src\tools</Filter>
     </ClInclude>
@@ -807,6 +813,9 @@
       <Filter>olcTemplate\game\src\tools\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\pathfollower.cpp">
+      <Filter>olcTemplate\game\src\tools\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\tools\src\dialog.cpp">
       <Filter>olcTemplate\game\src\tools\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\fader.cpp">

@@ -96,6 +96,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -166,6 +167,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -236,6 +238,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -306,6 +309,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -376,6 +380,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -446,6 +451,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -517,6 +523,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -588,6 +595,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -659,6 +667,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfollower.o \
@@ -858,6 +867,10 @@ $(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o: ../olcTemplate/game/sr
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/olcTemplate/game/src/textbox.o: ../olcTemplate/game/src/textbox.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o: ../olcTemplate/game/src/tools/src/dialog.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/tools/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
