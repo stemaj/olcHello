@@ -17,6 +17,7 @@ public:
   Render* GetRender() override;
 
   Dialog _dialog;
+  void Select(int i) { _dialog._selection = i; }
 
   PT<int> _mousePos;
 

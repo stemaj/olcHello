@@ -37,7 +37,7 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
       if (contains(rect,p))
 //          { dialogLevel->_mousePos.x, dialogLevel->_mousePos.y }))
       {
-        dia._selection = int(i);
+        dialogLevel->Select(int(i));
         color = olc::YELLOW;        
       }
       pge->DrawDecal({10, y}, r, {1,1}, color);
