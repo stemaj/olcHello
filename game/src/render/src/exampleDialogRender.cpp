@@ -34,9 +34,10 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
       Point p;
       p.x = dialogLevel->_mousePos.x;
       p.y = dialogLevel->_mousePos.y;
-      if (wrapper::olc::utils::geom2d::contains(rect,p))
+      if (contains(rect,p))
 //          { dialogLevel->_mousePos.x, dialogLevel->_mousePos.y }))
       {
+        dia._selection = int(i);
         color = olc::YELLOW;        
       }
       pge->DrawDecal({10, y}, r, {1,1}, color);
