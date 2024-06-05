@@ -79,7 +79,7 @@ void ExampleScreenElementsLevelRender::DoRender(olc::PixelGameEngine* pge, float
   const int segments = 16;
   std::vector<olc::vf2d> points;
   for (int i = 0; i < segments; i++)
-    points.push_back(olc::vf2d(offset_x + radius * cos(i * (2 * pi / segments)), offset_y + radius * sin(i * (2 * pi / segments))));
+    points.push_back(olc::vf2d(offset_x + radius * cos(i * (2 * M_PI / segments)), offset_y + radius * sin(i * (2 * M_PI / segments))));
 
   std::vector<olc::vf2d> uvs;
   uvs.resize(points.size());

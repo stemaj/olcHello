@@ -29,9 +29,13 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
       auto r = font->RenderStringToDecal(utf8::utf8to32(
         std::to_string(i + 1) + ". " + node.options[i].first), olc::WHITE);
 
-      auto rect = wrapper::geometry::Rect({10,(int)y}, {r->sprite->width,r->sprite->height});
+      auto rect = Rect({10,(int)y}, {r->sprite->width,r->sprite->height});
       olc::Pixel color = olc::WHITE;
-      if (wrapper::geometry::contains(rect, { dialogLevel->_mousePos.x, dialogLevel->_mousePos.y }))
+      Point p;
+      p.x = dialogLevel->_mousePos.x;
+      p.y = dialogLevel->_mousePos.y;
+      if (wrapper::olc::utils::geom2d::contains(rect,p))
+//          { dialogLevel->_mousePos.x, dialogLevel->_mousePos.y }))
       {
         color = olc::YELLOW;        
       }
