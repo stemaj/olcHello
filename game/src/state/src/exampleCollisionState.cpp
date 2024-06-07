@@ -92,7 +92,7 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
   _world->Step(fElapsedTime, _velocityIterations, _positionIterations);
 
   ImGui::Begin("Collision Debug");
-  if (ImGui::BeginListBox("Shape", ImVec2(0, _triShape.size() * 25)))
+  if (ImGui::BeginListBox("Shape", ImVec2(0, (float)_triShape.size() * 25.0f)))
   {
     for (const auto& point : _triShape)
       ImGui::Text("(%f, %f)", point.x*SCALE, point.y*SCALE);
@@ -207,12 +207,14 @@ void ExampleCollisionState::InitValues()
   triBodyDef.linearDamping = 100.0f; // Keine Daempfung
   _triBodyPtr = _world->CreateBody(&triBodyDef);
   b2PolygonShape triShape;
-  b2Vec2 triVec[_triShape.size()];
+  const size_t triSize = _triShape.size();
+  b2Vec2* triVec = new b2Vec2[triSize]();
   for (int i = 0; i < _triShape.size(); i++)
   {
     triVec[i].Set(_triShape[i].x, _triShape[i].y);
   }
   triShape.Set(triVec, _triShape.size());
+  delete[] triVec;
   b2FixtureDef triFixtureDef;
   triFixtureDef.density = _triDensity;
   triFixtureDef.shape = &triShape;

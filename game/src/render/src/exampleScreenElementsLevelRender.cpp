@@ -6,6 +6,7 @@
 #include <olcTemplate/game/fonts.hpp>
 #define UTF_CPP_CPLUSPLUS 202002L
 #include <olcTemplate/sdk/utfcpp/utf8.h>
+#include <numbers>
 
 namespace stemaj {
   class ExampleScreenElementsLevelRenderImpl
@@ -79,14 +80,19 @@ void ExampleScreenElementsLevelRender::DoRender(olc::PixelGameEngine* pge, float
   const int segments = 16;
   std::vector<olc::vf2d> points;
   for (int i = 0; i < segments; i++)
-    points.push_back(olc::vf2d(offset_x + radius * cos(i * (2 * M_PI / segments)), offset_y + radius * sin(i * (2 * M_PI / segments))));
+    points.push_back(olc::vf2d(offset_x + radius * cos(i * (2 * std::numbers::pi / segments)),
+      offset_y + radius * sin(i * (2 * std::numbers::pi / segments))));
 
   std::vector<olc::vf2d> uvs;
   uvs.resize(points.size());
-  pge->DrawPolygonDecal(nullptr, points, uvs, olc::Pixel(screenElementsLevel->_color.r, screenElementsLevel->_color.g, screenElementsLevel->_color.b));
+  pge->DrawPolygonDecal(nullptr, points, uvs, olc::Pixel(screenElementsLevel->_color.r, 
+    screenElementsLevel->_color.g, screenElementsLevel->_color.b));
 
-  pge->FillRectDecal({ (float)screenElementsLevel->_rect.pos.x, (float)screenElementsLevel->_rect.pos.y },
-    { (float)screenElementsLevel->_rect.size.x, (float)screenElementsLevel->_rect.size.y },
-    olc::Pixel(screenElementsLevel->_color.r, screenElementsLevel->_color.g, screenElementsLevel->_color.b));
+  pge->FillRectDecal({ (float)screenElementsLevel->_rect.pos.x, 
+    (float)screenElementsLevel->_rect.pos.y },
+    { (float)screenElementsLevel->_rect.size.x, 
+    (float)screenElementsLevel->_rect.size.y },
+    olc::Pixel(screenElementsLevel->_color.r, 
+      screenElementsLevel->_color.g, screenElementsLevel->_color.b));
 
 }
