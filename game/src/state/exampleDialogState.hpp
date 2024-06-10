@@ -1,8 +1,9 @@
 #ifndef __EXAMPLEDIALOGSTATE_HPP
 #define __EXAMPLEDIALOGSTATE_HPP
 
+#include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/tools/dialog.hpp>
-#include <game/src/state/levelState.hpp>
+#include <olcTemplate/game/src/state/levelState.hpp>
 
 namespace stemaj {
 

@@ -2,7 +2,8 @@
 #define __EXAMPLECOLLISIONSTATE_HPP
 
 #include <cstdint>
-#include <game/src/state/levelState.hpp>
+#include <olcTemplate/game/coordinates.hpp>
+#include <olcTemplate/game/src/state/levelState.hpp>
 
 class b2World;
 class b2BodyDef;

@@ -744,6 +744,9 @@
     <ClInclude Include="..\olcTemplate\game\src\state\introState.hpp">
       <Filter>olcTemplate\game\src\state</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp">
+      <Filter>olcTemplate\game\src\state</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol.hpp">
       <Filter>olcTemplate\sdk\sol2-3.3.0</Filter>
     </ClInclude>
@@ -752,6 +755,9 @@
     </ClInclude>
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp">
       <Filter>olcTemplate\sdk\lua-5.4.2\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\starter.hpp">
+      <Filter>game</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\render\exampleWalkLevelRender.hpp">
       <Filter>game\src\render</Filter>
@@ -778,9 +784,6 @@
       <Filter>game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\state\exampleWalkLevelState.hpp">
-      <Filter>game\src\state</Filter>
-    </ClInclude>
-    <ClInclude Include="..\game\src\state\levelState.hpp">
       <Filter>game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\state\exampleCollisionState.hpp">
@@ -851,6 +854,9 @@
     <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
       <Filter>olcTemplate\game\src\state\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
+      <Filter>olcTemplate\game\src\state\src</Filter>
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\imgui_demo.cpp">
       <Filter>olcTemplate\sdk\imgui-1.90.4</Filter>
     </ClCompile>
@@ -871,6 +877,9 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\backends\imgui_impl_opengl2.cpp">
       <Filter>olcTemplate\sdk\imgui-1.90.4\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="..\game\src\starter.cpp">
+      <Filter>game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\render\src\exampleDialogRender.cpp">
       <Filter>game\src\render\src</Filter>
@@ -900,9 +909,6 @@
       <Filter>game\src\state\src</Filter>
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
-      <Filter>game\src\state\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\game\src\state\src\levelState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -515,9 +515,11 @@
     <ClInclude Include="..\olcTemplate\game\src\state\mainMenuState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\state.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\introState.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol\config.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp" />
+    <ClInclude Include="..\game\starter.hpp" />
     <ClInclude Include="..\game\src\render\exampleWalkLevelRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleCollisionRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleDialogRender.hpp" />
@@ -527,7 +529,6 @@
     <ClInclude Include="..\game\src\state\exampleScreenElementsLevelState.hpp" />
     <ClInclude Include="..\game\src\state\examplePathLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleWalkLevelState.hpp" />
-    <ClInclude Include="..\game\src\state\levelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -573,6 +574,8 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\imgui_demo.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\imgui_widgets.cpp">
@@ -586,6 +589,8 @@
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\backends\imgui_impl_opengl3.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\sdk\imgui-1.90.4\backends\imgui_impl_opengl2.cpp">
+    </ClCompile>
+    <ClCompile Include="..\game\src\starter.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\render\src\exampleDialogRender.cpp">
     </ClCompile>
@@ -606,8 +611,6 @@
     <ClCompile Include="..\game\src\state\src\exampleDialogState.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
-    </ClCompile>
-    <ClCompile Include="..\game\src\state\src\levelState.cpp">
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

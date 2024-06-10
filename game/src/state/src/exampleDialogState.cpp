@@ -1,7 +1,6 @@
-#include "olcTemplate/game/src/tools/dialog.hpp"
+#include <olcTemplate/game/src/tools/dialog.hpp>
 #include <game/src/state/exampleDialogState.hpp>
 #include <game/src/render/exampleDialogRender.hpp>
-#include <iterator>
 #include <memory>
 
 using namespace stemaj;
@@ -34,12 +33,9 @@ Render* ExampleDialogState::GetRender()
 
 void ExampleDialogState::LoadLevelData()
 {
-  std::cout << "loading" << std::endl;
-
   _dialog.Load("exampleDialog");
 }
 
 void ExampleDialogState::SaveLevelData()
 {
-  std::cout << "saving" << std::endl;
 }
