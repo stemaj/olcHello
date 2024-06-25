@@ -88,6 +88,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -97,6 +98,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -160,6 +162,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -169,6 +172,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -232,6 +236,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -241,6 +246,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -304,6 +310,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -313,6 +320,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -376,6 +384,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -385,6 +394,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -448,6 +458,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -457,6 +468,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -521,6 +533,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -530,6 +543,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -594,6 +608,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -603,6 +618,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -667,6 +683,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/game/src/loadsave.o \
 	$(OBJDIR)/olcTemplate/game/src/main.o \
 	$(OBJDIR)/olcTemplate/game/src/olcTemplate.o \
+	$(OBJDIR)/olcTemplate/game/src/palette.o \
 	$(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/introRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/levelRender.o \
@@ -676,6 +693,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o \
 	$(OBJDIR)/olcTemplate/game/src/textbox.o \
+	$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/dialog.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/fader.o \
 	$(OBJDIR)/olcTemplate/game/src/tools/src/pathfinding.o \
@@ -848,6 +866,10 @@ $(OBJDIR)/olcTemplate/game/src/olcTemplate.o: ../olcTemplate/game/src/olcTemplat
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
+$(OBJDIR)/olcTemplate/game/src/palette.o: ../olcTemplate/game/src/palette.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
 $(OBJDIR)/olcTemplate/game/src/render/helper/src/olcHelper.o: ../olcTemplate/game/src/render/helper/src/olcHelper.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/render/helper/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
@@ -881,6 +903,10 @@ $(OBJDIR)/olcTemplate/game/src/state/src/mainMenuState.o: ../olcTemplate/game/sr
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/olcTemplate/game/src/textbox.o: ../olcTemplate/game/src/textbox.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/olcTemplate/game/src/tools/src/daytime.o: ../olcTemplate/game/src/tools/src/daytime.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/tools/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 

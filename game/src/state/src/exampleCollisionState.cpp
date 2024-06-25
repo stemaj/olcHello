@@ -91,6 +91,7 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
 
   _world->Step(fElapsedTime, _velocityIterations, _positionIterations);
 
+#if defined(STEMAJ_DEBUG)
   ImGui::Begin("Collision Debug");
   if (ImGui::BeginListBox("Shape", ImVec2(0, (float)_triShape.size() * 25.0f)))
   {
@@ -99,6 +100,7 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
     ImGui::EndListBox();
   }
   ImGui::End();
+#endif
 
   return ChangeLevel(input, fElapsedTime);
 }

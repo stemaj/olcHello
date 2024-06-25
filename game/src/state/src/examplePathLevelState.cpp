@@ -79,6 +79,7 @@ std::optional<std::unique_ptr<State>> ExamplePathLevelState::ExamplePathLevelSta
     _obj = _pathFollower.GetCurrentPosition();
   }
 
+#if defined(STEMAJ_DEBUG)
   ImGui::Begin("ExamplePathLevel Debug");
   ImGui::Text("Mouse Position: (%d, %d)", input.mouseX, input.mouseY);
   ImGui::Text("Endpunkt:  (%d, %d)", _end.x, _end.y);
@@ -91,6 +92,7 @@ std::optional<std::unique_ptr<State>> ExamplePathLevelState::ExamplePathLevelSta
     ImGui::EndListBox();
   }
   ImGui::End();
+#endif
 
   return ChangeLevel(input, fElapsedTime);
 }

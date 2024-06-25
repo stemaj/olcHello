@@ -207,6 +207,9 @@
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Geometry2D_v2.h">
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Camera2D.h">
+      <Filter>olcTemplate\game\src\engine</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\engine\imgui_impl_pge.h">
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
@@ -681,6 +684,9 @@
     <ClInclude Include="..\olcTemplate\game\loadsave.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\palette.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\sound.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
@@ -727,6 +733,9 @@
       <Filter>olcTemplate\game\src\tools</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfinding.hpp">
+      <Filter>olcTemplate\game\src\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\tools\daytime.hpp">
       <Filter>olcTemplate\game\src\tools</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfollower.hpp">
@@ -815,6 +824,9 @@
     <ClCompile Include="..\olcTemplate\game\src\loadsave.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\palette.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\textbox.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
@@ -834,6 +846,9 @@
       <Filter>olcTemplate\game\src\render\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\pathfinding.cpp">
+      <Filter>olcTemplate\game\src\tools\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\tools\src\daytime.cpp">
       <Filter>olcTemplate\game\src\tools\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\pathfollower.cpp">
