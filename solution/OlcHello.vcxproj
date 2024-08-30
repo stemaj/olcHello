@@ -136,10 +136,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -153,14 +153,14 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)OlcHello.pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2dD.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -168,10 +168,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -185,14 +185,14 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)OlcHello.pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2dD.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -201,7 +201,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -225,7 +225,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)OlcHello.pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2dD.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -233,7 +233,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Test|x64'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -257,7 +257,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)OlcHello.pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2dD.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -266,10 +266,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..;..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -282,15 +282,15 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2d.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -298,10 +298,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalOptions>  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..;..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -314,15 +314,15 @@
       <DiagnosticsFormat>Caret</DiagnosticsFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions></PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>box2d.lib;freetype.lib;lua54.lib;soloud_static_x64.lib;;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;lua54.lib;soloud_static_x64.lib;box2d.lib;;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\olcTemplate\sdk\box2d\windows;..\olcTemplate\sdk\freetype-2.13.1\windows;..\olcTemplate\sdk\lua-5.4.2\windows;..\olcTemplate\sdk\soloud\windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)OlcHello.exe</OutputFile>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
@@ -653,6 +653,9 @@
     <None Include="..\olcTemplate\assets\fonts\dogica.ttf" />
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf" />
     <None Include="..\assets\wav\1.wav" />
+    <None Include="..\olcTemplate\assets\wav\groovy-energy-sports-80-bpm-short-12275.mp3" />
+    <None Include="..\olcTemplate\assets\wav\hard-rock-logo-108960.mp3" />
+    <None Include="..\olcTemplate\assets\wav\breaking-news-177297.mp3" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\olcTemplate\assets\png\pge2_logo.png">

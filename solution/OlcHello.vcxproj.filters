@@ -148,6 +148,9 @@
     <Filter Include="assets\wav">
       <UniqueIdentifier>{621ECEA8-4ED6-0FF6-B7DD-E851A3B4AAE6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="olcTemplate\assets\wav">
+      <UniqueIdentifier>{5865CFFD-445F-F84F-2DCC-8E6019655EBC}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\genie.lua" />
@@ -192,6 +195,15 @@
     </None>
     <None Include="..\assets\wav\1.wav">
       <Filter>assets\wav</Filter>
+    </None>
+    <None Include="..\olcTemplate\assets\wav\groovy-energy-sports-80-bpm-short-12275.mp3">
+      <Filter>olcTemplate\assets\wav</Filter>
+    </None>
+    <None Include="..\olcTemplate\assets\wav\hard-rock-logo-108960.mp3">
+      <Filter>olcTemplate\assets\wav</Filter>
+    </None>
+    <None Include="..\olcTemplate\assets\wav\breaking-news-177297.mp3">
+      <Filter>olcTemplate\assets\wav</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

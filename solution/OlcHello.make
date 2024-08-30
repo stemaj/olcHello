@@ -49,7 +49,7 @@ ifeq ($(config),debug)
   OBJDIR              = obj/Debug
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
+  DEFINES            += -DSTEMAJ_DEBUG
   INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
@@ -207,8 +207,8 @@ ifeq ($(config),release)
   OBJDIR              = obj/Release
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
-  INCLUDES           += -I".." -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  DEFINES            += -DSTEMAJ_RELEASE
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
@@ -286,7 +286,7 @@ ifeq ($(config),debug64)
   OBJDIR              = obj/x64/Debug
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
+  DEFINES            += -DSTEMAJ_DEBUG
   INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
@@ -444,8 +444,8 @@ ifeq ($(config),release64)
   OBJDIR              = obj/x64/Release
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
-  INCLUDES           += -I".." -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  DEFINES            += -DSTEMAJ_RELEASE
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
@@ -524,7 +524,7 @@ ifeq ($(config),debuguniv64)
   OBJDIR              = obj/Universal64/Debug
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
+  DEFINES            += -DSTEMAJ_DEBUG
   INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
@@ -684,8 +684,8 @@ ifeq ($(config),releaseuniv64)
   OBJDIR              = obj/Universal64/Release
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
-  DEFINES            +=
-  INCLUDES           += -I".." -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  DEFINES            += -DSTEMAJ_RELEASE
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64

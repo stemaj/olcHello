@@ -12,6 +12,7 @@ solution "OlcHello"
   configuration "Debug"
     targetdir (path.join(ROOT_DIR,"solution/bin/Debug"))
     objdir (path.join(ROOT_DIR,"solution/obj"))
+    defines { "STEMAJ_DEBUG" }
     flags { "Symbols", "Cpp20" }
   configuration "Test"
     targetdir (path.join(ROOT_DIR,"solution/bin/Test"))
@@ -21,14 +22,12 @@ solution "OlcHello"
   configuration "Release"
     targetdir (path.join(ROOT_DIR,"solution/bin/Release"))
     objdir (path.join(ROOT_DIR,"solution/obj"))
+    defines { "STEMAJ_RELEASE" }
     flags { "OptimizeSpeed", "Cpp20" }
   platforms {
     "Native",
     "x64",
     "Universal64",
-  }
-  includedirs {
-    "."    
   }
 
 project "OlcHello"
@@ -41,6 +40,7 @@ project "OlcHello"
     path.join(ROOT_DIR,"**.png"),
     path.join(ROOT_DIR,"**.ttf"),
     path.join(ROOT_DIR,"**.wav"),
+    path.join(ROOT_DIR,"**.mp3"),
   }
   includedirs {
     ".",
@@ -54,6 +54,7 @@ project "OlcHello"
   }
 
   configuration "windows"
+    debugdir (ROOT_DIR)
     includedirs {
     }
     libdirs {
@@ -63,12 +64,14 @@ project "OlcHello"
       "olcTemplate/sdk/soloud/windows",
     }
     links {
-      "box2d",
       "freetype",
       "lua54",
       "soloud_static_x64"
     }
-    debugdir ".."
+    buildoptions {
+      "/wd4244", -- Konvertierung, möglicher Datenverlust
+      "/wd4267", -- Konvertierung, möglicher Datenverlust
+  }
 
   configuration "linux"
     includedirs {
@@ -93,9 +96,22 @@ project "OlcHello"
        "asound",
        "box2d"
     }
-    debugdir "."
+
+  configuration { "windows", "Debug" }
+    links {
+      "box2dD",
+    }
+  configuration { "windows", "Test" }
+    links {
+      "box2dD",
+    }
+  configuration { "windows", "Release" }
+    links {
+      "box2d",
+    }
  
   configuration "macosx"
+    debugdir (ROOT_DIR)
     buildoptions_cpp {
       "-Wall",
     }
@@ -126,6 +142,5 @@ project "OlcHello"
       "Carbon.framework",
       "AudioToolbox.framework",
     }
-    debugdir "."
 
   configuration {}
