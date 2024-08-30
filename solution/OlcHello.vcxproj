@@ -331,7 +331,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TTF.h" />
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_QuickGUI.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TransformedView.h" />
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Palette.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Geometry2D.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcPixelGameEngine.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Animate2D.h" />
@@ -494,6 +496,7 @@
     <ClInclude Include="..\olcTemplate\sdk\soloud\include\soloud_audiosource.h" />
     <ClInclude Include="..\olcTemplate\sdk\soloud\include\soloud_internal.h" />
     <ClInclude Include="..\olcTemplate\game\textbox.hpp" />
+    <ClInclude Include="..\olcTemplate\game\physicalWorld.hpp" />
     <ClInclude Include="..\olcTemplate\game\loadsave.hpp" />
     <ClInclude Include="..\olcTemplate\game\palette.hpp" />
     <ClInclude Include="..\olcTemplate\game\sound.hpp" />
@@ -506,7 +509,9 @@
     <ClInclude Include="..\olcTemplate\game\game.hpp" />
     <ClInclude Include="..\olcTemplate\game\fonts.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\levelRender.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\render\loadingRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\render.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\render\logoRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\mainMenuRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\introRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\helper\olcHelper.hpp" />
@@ -516,9 +521,11 @@
     <ClInclude Include="..\olcTemplate\game\src\tools\pathfollower.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\fader.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\mainMenuState.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\state\logoState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\state.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\introState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\state\loading.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol\config.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp" />
@@ -555,15 +562,21 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\textbox.cpp">
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\physicalWorld.cpp">
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\coordinates.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\render\helper\src\olcHelper.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\render\src\loadingRender.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\render\src\introRender.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\render\src\levelRender.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\render\src\mainMenuRender.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\render\src\logoRender.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\pathfinding.cpp">
     </ClCompile>
@@ -580,6 +593,10 @@
     <ClCompile Include="..\olcTemplate\game\src\state\src\introState.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\logoState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\loading.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
     </ClCompile>
@@ -624,11 +641,13 @@
     <None Include="..\genie.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.lua" />
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua" />
     <None Include="..\assets\sheets\bik.lua" />
     <None Include="..\scripts\exampleCollision.lua" />
     <None Include="..\scripts\examplePathLevel.lua" />
     <None Include="..\scripts\settings.lua" />
     <None Include="..\scripts\exampleDialog.lua" />
+    <None Include="..\scripts\intro.lua" />
     <None Include="..\scripts\mainMenu.lua" />
     <None Include="..\scripts\profile\1\exampleCollision.lua" />
     <None Include="..\olcTemplate\assets\fonts\dogica.ttf" />
@@ -639,6 +658,10 @@
     <Image Include="..\olcTemplate\assets\png\pge2_logo.png">
       <DeploymentContent>true</DeploymentContent>
       <Link>olcTemplate\assets\png\pge2_logo.png</Link>
+    </Image>
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
+      <DeploymentContent>true</DeploymentContent>
+      <Link>olcTemplate\assets\sheets\Sing_With_Me.png</Link>
     </Image>
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png">
       <DeploymentContent>true</DeploymentContent>

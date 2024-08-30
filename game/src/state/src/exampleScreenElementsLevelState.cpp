@@ -1,6 +1,5 @@
 #include <olcTemplate/game/fonts.hpp>
 #include <olcTemplate/game/textbox.hpp>
-#include <algorithm>
 #include <game/src/state/exampleScreenElementsLevelState.hpp>
 #include <game/src/render/exampleScreenElementsLevelRender.hpp>
 #include <olcTemplate/game/src/render/levelRender.hpp>
@@ -11,7 +10,7 @@ ExampleScreenElementsLevelState::ExampleScreenElementsLevelState() :
   _render(std::make_unique<ExampleScreenElementsLevelRender>())
 {
   _fader.StartFadeIn();
-  SO.Play("1");
+  playMusic("assets/wav/1.wav");
   LoadLevelData();
 }
 

@@ -18,12 +18,40 @@
       }
     },
     {
+      "label": "build release",
+      "type": "shell",
+      "command": "cd solution && make -j8 config=release",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
       "label": "test",
       "type": "shell",
       "command": "cd solution && make config=test -j8 && cd .. && ./solution/bin/Test/OlcHello",
       "problemMatcher": [],
       "group": {
         "kind": "test",
+      },
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "cd solution && make -j8 clean",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": false
       },
       "presentation": {
         "focus": true,
@@ -45,9 +73,23 @@
       }
     },
     {
+      "label": "run release",
+      "type": "shell",
+      "command": "./solution/bin/Release/OlcHello",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": false,
+      },
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
+    },
+    {
       "label": "build on mac",
       "type": "shell",
-      "command": "clang++ -v -std=c++17 -mmacosx-version-min=10.15 -Wall -Wno-everything -framework OpenGL -framework GLUT -framework Carbon -lpng -lfreetype -L/opt/homebrew/lib -I/opt/homebrew/include src/*.cpp -o ./bin/OlcTemplate && ./bin/OlcTemplate",
+      "command": "./.vscode/buildOnMac.sh",
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -79,7 +121,7 @@
         "-sMAX_WEBGL_VERSION=2",
         "-sMIN_WEBGL_VERSION=2",
         "-sUSE_LIBPNG=1",
-        "-sTOTAL_MEMORY=30mb",
+        "-sTOTAL_MEMORY=100mb",
         "-sLLD_REPORT_UNDEFINED",
         "-I./",
         "-I/usr/include/SDL2",
@@ -105,6 +147,8 @@
         "olcTemplate/shell_minimal.html",
         "--preload-file",
         "./assets",
+        "--preload-file",
+        "./olcTemplate/assets",
         "--preload-file",
         "./scripts",
         "&&",
