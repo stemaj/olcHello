@@ -1,3 +1,5 @@
+#include <opencv2/opencv.hpp>
+#include "olcTemplate/game/videoFrame.hpp"
 #include <olcTemplate/game/src/tools/dialog.hpp>
 #include <game/src/state/exampleDialogState.hpp>
 #include <game/src/render/exampleDialogRender.hpp>
@@ -34,6 +36,9 @@ Render* ExampleDialogState::GetRender()
 void ExampleDialogState::LoadLevelData()
 {
   _dialog.Load("exampleDialog");
+
+  VideoFrame f("path");
+  f.Frame(0.34f);
 }
 
 void ExampleDialogState::SaveLevelData()

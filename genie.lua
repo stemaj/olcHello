@@ -76,6 +76,7 @@ project "OlcHello"
   configuration "linux"
     includedirs {
       "/usr/include",
+      "/usr/include/opencv4",
     }
     libdirs {
       "/usr/lib",
