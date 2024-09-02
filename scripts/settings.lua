@@ -1,6 +1,6 @@
 -- Common Game Settings
 
-width = 320
-height = 200
+width = 800
+height = 360
 
-show_intro = false
+show_intro = true
