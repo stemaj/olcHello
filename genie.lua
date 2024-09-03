@@ -41,6 +41,7 @@ project "OlcHello"
     path.join(ROOT_DIR,"**.ttf"),
     path.join(ROOT_DIR,"**.wav"),
     path.join(ROOT_DIR,"**.mp3"),
+    path.join(ROOT_DIR,"**.mp4"),
   }
   includedirs {
     ".",
@@ -80,6 +81,7 @@ project "OlcHello"
     }
     libdirs {
       "/usr/lib",
+      "/usr/lib/x86_64-linux-gnu/",
       "olcTemplate/sdk/box2d/linux",
       "olcTemplate/sdk/lua-5.4.2/linux",
       "olcTemplate/sdk/soloud/linux",
@@ -95,7 +97,9 @@ project "OlcHello"
        "dl",
        "soloud_static",
        "asound",
-       "box2d"
+       "box2d",
+       "opencv_core",
+       "opencv_videoio"
     }
 
   configuration { "windows", "Debug" }

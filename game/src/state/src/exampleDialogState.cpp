@@ -37,8 +37,7 @@ void ExampleDialogState::LoadLevelData()
 {
   _dialog.Load("exampleDialog");
 
-  VideoFrame f("path");
-  f.Frame(0.34f);
+  _videoFrame = std::make_unique<VideoFrame>("assets/mp4/watch.mp4");
 }
 
 void ExampleDialogState::SaveLevelData()

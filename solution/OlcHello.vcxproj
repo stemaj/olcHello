@@ -499,6 +499,7 @@
     <ClInclude Include="..\olcTemplate\game\physicalWorld.hpp" />
     <ClInclude Include="..\olcTemplate\game\loadsave.hpp" />
     <ClInclude Include="..\olcTemplate\game\palette.hpp" />
+    <ClInclude Include="..\olcTemplate\game\videoFrame.hpp" />
     <ClInclude Include="..\olcTemplate\game\sound.hpp" />
     <ClInclude Include="..\olcTemplate\game\animation.hpp" />
     <ClInclude Include="..\olcTemplate\game\coordinates.hpp" />
@@ -557,6 +558,8 @@
     <ClCompile Include="..\olcTemplate\game\src\game.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\loadsave.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\videoFrame.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\palette.cpp">
     </ClCompile>
@@ -656,6 +659,7 @@
     <None Include="..\olcTemplate\assets\wav\groovy-energy-sports-80-bpm-short-12275.mp3" />
     <None Include="..\olcTemplate\assets\wav\hard-rock-logo-108960.mp3" />
     <None Include="..\olcTemplate\assets\wav\breaking-news-177297.mp3" />
+    <None Include="..\assets\mp4\watch.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\olcTemplate\assets\png\pge2_logo.png">

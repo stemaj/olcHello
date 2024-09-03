@@ -151,6 +151,9 @@
     <Filter Include="olcTemplate\assets\wav">
       <UniqueIdentifier>{5865CFFD-445F-F84F-2DCC-8E6019655EBC}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\mp4">
+      <UniqueIdentifier>{85F5CDA8-71AD-0FF6-DAB4-E851C68BAAE6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\genie.lua" />
@@ -204,6 +207,9 @@
     </None>
     <None Include="..\olcTemplate\assets\wav\breaking-news-177297.mp3">
       <Filter>olcTemplate\assets\wav</Filter>
+    </None>
+    <None Include="..\assets\mp4\watch.mp4">
+      <Filter>assets\mp4</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -714,6 +720,9 @@
     <ClInclude Include="..\olcTemplate\game\palette.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\videoFrame.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\sound.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
@@ -861,6 +870,9 @@
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\loadsave.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\videoFrame.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\palette.cpp">

@@ -1,6 +1,7 @@
 #ifndef __EXAMPLEDIALOGSTATE_HPP
 #define __EXAMPLEDIALOGSTATE_HPP
 
+#include <olcTemplate/game/videoFrame.hpp>
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/tools/dialog.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
@@ -21,6 +22,8 @@ public:
   void Select(int i) { _dialog._selection = i; }
 
   PT<int> _mousePos;
+
+  std::unique_ptr<VideoFrame> _videoFrame;
 
 private:
   void LoadLevelData() override;

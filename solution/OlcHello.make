@@ -58,11 +58,11 @@ ifeq ($(config),debug)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -138,11 +138,11 @@ ifeq ($(config),test)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -218,11 +218,11 @@ ifeq ($(config),release)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -298,11 +298,11 @@ ifeq ($(config),debug64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -378,11 +378,11 @@ ifeq ($(config),test64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -458,11 +458,11 @@ ifeq ($(config),release64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -539,11 +539,11 @@ ifeq ($(config),debuguniv64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -620,11 +620,11 @@ ifeq ($(config),testuniv64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -701,11 +701,11 @@ ifeq ($(config),releaseuniv64)
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../../../../../usr/lib/x86_64-linux-gnu" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d -lopencv_core -lopencv_videoio
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
