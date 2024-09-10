@@ -1,4 +1,3 @@
-#include <opencv2/opencv.hpp>
 #include "olcTemplate/game/videoFrame.hpp"
 #include <olcTemplate/game/src/tools/dialog.hpp>
 #include <game/src/state/exampleDialogState.hpp>

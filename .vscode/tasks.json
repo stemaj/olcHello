@@ -156,6 +156,10 @@
         "./index.html"
       ],
       "problemMatcher": [],
+      "presentation": {
+        "focus": true,
+        "clear": true
+      }
     },
   ]
 }

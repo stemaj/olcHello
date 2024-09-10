@@ -77,11 +77,9 @@ project "OlcHello"
   configuration "linux"
     includedirs {
       "/usr/include",
-      "/usr/include/opencv4",
     }
     libdirs {
       "/usr/lib",
-      "/usr/lib/x86_64-linux-gnu/",
       "olcTemplate/sdk/box2d/linux",
       "olcTemplate/sdk/lua-5.4.2/linux",
       "olcTemplate/sdk/soloud/linux",
