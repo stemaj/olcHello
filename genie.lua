@@ -52,6 +52,8 @@ project "OlcHello"
     "olcTemplate/sdk/lua-5.4.2/include",
     "olcTemplate/sdk/soloud/include",
     "olcTemplate/sdk/freetype-2.13.1/include",
+    "olcTemplate/sdk/opencv-4.10.0/include",
+    "olcTemplate/sdk/ffmpeg-7.0.2/include",
   }
 
   configuration "windows"
@@ -83,6 +85,7 @@ project "OlcHello"
       "olcTemplate/sdk/box2d/linux",
       "olcTemplate/sdk/lua-5.4.2/linux",
       "olcTemplate/sdk/soloud/linux",
+      "olcTemplate/sdk/ffmpeg-7.0.2/linux",
     }
     links {
        "freetype",
@@ -97,7 +100,17 @@ project "OlcHello"
        "asound",
        "box2d",
        "opencv_core",
-       "opencv_videoio"
+       "opencv_videoio",
+       "avcodec",
+       "avdevice",
+       "avfilter",
+       "avformat",
+       "avutil",
+       "swresample",
+       "swscale",
+       "z",
+       "lzma",
+       "drm"
     }
 
   configuration { "windows", "Debug" }
