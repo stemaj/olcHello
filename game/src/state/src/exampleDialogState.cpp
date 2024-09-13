@@ -1,12 +1,12 @@
-#include "olcTemplate/game/videoFrame.hpp"
-#include <olcTemplate/game/src/tools/dialog.hpp>
 #include <game/src/state/exampleDialogState.hpp>
 #include <game/src/render/exampleDialogRender.hpp>
+#include <olcTemplate/game/videoFrame.hpp>
+#include <olcTemplate/game/src/tools/dialog.hpp>
 #include <memory>
 
 using namespace stemaj;
 
-ExampleDialogState::ExampleDialogState() : _render(std::make_unique<ExampleDialogRender>())
+ExampleDialogState::ExampleDialogState() : _videoFrame(std::make_unique<VideoFrame>("assets/mp4/watch.mp4")), _render(std::make_unique<ExampleDialogRender>())
 {
   _fader.StartFadeIn();
   LoadLevelData();
@@ -36,7 +36,7 @@ void ExampleDialogState::LoadLevelData()
 {
   _dialog.Load("exampleDialog");
 
-  _videoFrame = std::make_unique<VideoFrame>("assets/mp4/watch.mp4");
+  //_videoFrame = std::make_unique<VideoFrame>("assets/mp4/watch.mp4");
 }
 
 void ExampleDialogState::SaveLevelData()
