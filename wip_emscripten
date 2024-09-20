@@ -1,0 +1,40 @@
+  configuration "Emscripten"
+    targetdir (ROOT_DIR)
+    objdir (path.join(ROOT_DIR,"solution/obj"))
+    defines { "STEMAJ_RELEASE", "WASM_ASYNC_COMPILATION", "USE_FREETYPE=1",
+      "USE_SDL=2", "USE_SDL_MIXER=2", "ALLOW_MEMORY_GROWTH=1" , "MAX_WEBGL_VERSION=2",
+      "MIN_WEBGL_VERSION=2", "USE_LIBPNG=1", "TOTAL_MEMORY=100mb",
+      "FETCH=1", "USE_ZLIB=1",
+      "__EMSCRIPTEN__"
+     }
+    flags { "Optimize", "Cpp20" }
+
+
+    configuration { "linux", "Debug or Test or Release" }
+    libdirs {
+      "/usr/lib",
+      "olcTemplate/sdk/box2d/linux",
+      "olcTemplate/sdk/lua-5.4.2/linux",
+      "olcTemplate/sdk/soloud/linux",
+      "olcTemplate/sdk/ffmpeg-7.0.2/linux",
+    }
+
+  configuration { "linux", "Emscripten" }
+    libdirs {
+      "/usr/lib",
+      "olcTemplate/sdk/box2d/emscripten",
+      "olcTemplate/sdk/lua-5.4.2/emscripten",
+      "olcTemplate/sdk/soloud/emscripten",
+      "olcTemplate/sdk/ffmpeg-7.0.2/emscripten",
+    }
+
+    linkoptions {
+      "-v",
+      "-o",
+      "../index.html",
+      "--shell-file ../olcTemplate/shell_minimal.html",
+      "--preload-file ../assets",
+      "--preload-file ../olcTemplate/assets",
+      "--preload-file ../scripts",
+      "--verbose",
+    }
