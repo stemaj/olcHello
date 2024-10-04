@@ -51,16 +51,16 @@ void ExampleDialogRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime
     pge->DrawDecal({10, 10}, r);
   }
 
-  // Draw Video
-  auto rgbVec = dialogLevel->_videoFrame->Frame(fElapsedTime);
-  int cnt = 0;
-  for (int y = 0; y < dialogLevel->_videoFrame->_videoSize.y; y++)
-  {
-    for (int x = 0; x < dialogLevel->_videoFrame->_videoSize.x; x++)
-    {
-      auto rgb = rgbVec[cnt];
-      pge->Draw({x,y}, olc::Pixel(rgb.r, rgb.g, rgb.b));
-      cnt++;
-    }
-  }
+  // // Draw Video
+  // auto rgbVec = dialogLevel->_videoFrame->Frame(fElapsedTime);
+  // int cnt = 0;
+  // for (int y = 0; y < dialogLevel->_videoFrame->_videoSize.y; y++)
+  // {
+  //   for (int x = 0; x < dialogLevel->_videoFrame->_videoSize.x; x++)
+  //   {
+  //     auto rgb = rgbVec[cnt];
+  //     pge->Draw({x,y}, olc::Pixel(rgb.r, rgb.g, rgb.b));
+  //     cnt++;
+  //   }
+  // }
 }
