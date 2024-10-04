@@ -138,7 +138,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -154,7 +154,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,7 +170,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -186,7 +186,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>STEMAJ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -203,7 +203,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -219,7 +219,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -235,7 +235,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -251,7 +251,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>RUN_TESTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -268,7 +268,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
@@ -283,7 +283,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -300,7 +300,7 @@
     <ClCompile>
       <AdditionalOptions>/wd4244 /wd4267  %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
@@ -315,7 +315,7 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>STEMAJ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\olcTemplate\sdk\box2d\include;..\olcTemplate\sdk\imgui-1.90.4;..\olcTemplate\sdk\imgui-1.90.4\backends;..\olcTemplate\sdk\sol2-3.3.0;..\olcTemplate\sdk\lua-5.4.2\include;..\olcTemplate\sdk\soloud\include;..\olcTemplate\sdk\freetype-2.13.1\include;..\olcTemplate\sdk\lz4-1.10.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -394,6 +394,7 @@
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.h" />
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lualib.h" />
     <ClInclude Include="..\olcTemplate\sdk\doctest-2.4.11\doctest.h" />
+    <ClInclude Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.h" />
     <ClInclude Include="..\olcTemplate\sdk\freetype-2.13.1\include\ft2build.h" />
     <ClInclude Include="..\olcTemplate\sdk\freetype-2.13.1\include\freetype\ftlzw.h" />
     <ClInclude Include="..\olcTemplate\sdk\freetype-2.13.1\include\freetype\ftgzip.h" />
@@ -543,6 +544,8 @@
     <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.c">
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\olcTemplate.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\sound.cpp">

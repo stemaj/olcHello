@@ -37,6 +37,9 @@
     <Filter Include="olcTemplate\sdk\doctest-2.4.11">
       <UniqueIdentifier>{80C26019-6CE8-2A80-552E-B04B41F34F4C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="olcTemplate\sdk\lz4-1.10.0">
+      <UniqueIdentifier>{3E6FC832-2A7F-7403-9338-D9217F67639C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="olcTemplate\sdk\freetype-2.13.1">
       <UniqueIdentifier>{2D956D4B-9978-7C8B-A27B-AAC70EDE42DC}</UniqueIdentifier>
     </Filter>
@@ -404,6 +407,9 @@
     </ClInclude>
     <ClInclude Include="..\olcTemplate\sdk\doctest-2.4.11\doctest.h">
       <Filter>olcTemplate\sdk\doctest-2.4.11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.h">
+      <Filter>olcTemplate\sdk\lz4-1.10.0</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\sdk\freetype-2.13.1\include\ft2build.h">
       <Filter>olcTemplate\sdk\freetype-2.13.1\include</Filter>
@@ -848,6 +854,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.c">
+      <Filter>olcTemplate\sdk\lz4-1.10.0</Filter>
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\olcTemplate.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>

@@ -35,6 +35,8 @@ project "OlcHello"
   files {
     path.join(ROOT_DIR,"**.h"),
     path.join(ROOT_DIR,"**.hpp"),
+    path.join(ROOT_DIR,"**.c"),
+    path.join(ROOT_DIR,"**.cc"),
     path.join(ROOT_DIR,"**.cpp"),
     path.join(ROOT_DIR,"**.lua"),
     path.join(ROOT_DIR,"**.png"),
@@ -52,6 +54,7 @@ project "OlcHello"
     "olcTemplate/sdk/lua-5.4.2/include",
     "olcTemplate/sdk/soloud/include",
     "olcTemplate/sdk/freetype-2.13.1/include",
+    "olcTemplate/sdk/lz4-1.10.0",
   }
 
   configuration "windows"

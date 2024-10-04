@@ -50,7 +50,7 @@ ifeq ($(config),debug)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
@@ -116,6 +116,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -130,7 +131,7 @@ ifeq ($(config),test)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
@@ -196,6 +197,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -210,7 +212,7 @@ ifeq ($(config),release)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
@@ -276,6 +278,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -290,7 +293,7 @@ ifeq ($(config),debug64)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
@@ -356,6 +359,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -370,7 +374,7 @@ ifeq ($(config),test64)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
@@ -436,6 +440,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -450,7 +455,7 @@ ifeq ($(config),release64)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
@@ -516,6 +521,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -531,7 +537,7 @@ ifeq ($(config),debuguniv64)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
@@ -597,6 +603,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -612,7 +619,7 @@ ifeq ($(config),testuniv64)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
@@ -678,6 +685,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -693,7 +701,7 @@ ifeq ($(config),releaseuniv64)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../../../../../usr/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
@@ -759,6 +767,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_draw.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o \
 
   define PREBUILDCMDS
   endef
@@ -781,6 +790,7 @@ OBJDIRS := \
 	$(OBJDIR)/olcTemplate/game/src/tools/src \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4 \
 	$(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/backends \
+	$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0 \
 
 RESOURCES := \
 
@@ -1031,6 +1041,10 @@ $(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_tables.o: ../olcTemplate/sdk/imgui-
 $(OBJDIR)/olcTemplate/sdk/imgui-1.90.4/imgui_widgets.o: ../olcTemplate/sdk/imgui-1.90.4/imgui_widgets.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/sdk/imgui-1.90.4
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/olcTemplate/sdk/lz4-1.10.0/lz4.o: ../olcTemplate/sdk/lz4-1.10.0/lz4.c $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/sdk/lz4-1.10.0
+	@echo $(notdir $<)
+	$(SILENT) $(CC) $(ALL_CFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 -include $(OBJECTS:%.o=%.d)
 ifneq (,$(PCH))
