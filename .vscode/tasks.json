@@ -107,11 +107,12 @@
       "args": [
         ".",
         "-name",
-        "'*.cpp'",
+        "\"*.cpp\" -o -name \"*.c\"",
         ">",
         "file_list.txt",
         "&&",
         "em++",
+        "-v",
         "-std=c++2a",
         "-O2",
         "-sWASM_ASYNC_COMPILATION",

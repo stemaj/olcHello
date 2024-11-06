@@ -32,7 +32,7 @@ else
 endif
 
 CC  = gcc
-CXX = g++-10
+CXX = g++
 AR  = ar
 
 ifndef RESCOMP

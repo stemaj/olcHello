@@ -10,3 +10,6 @@ git submodule update --init --recursive
 ~/GENie/bin/linux/genie vs2022
 ~/GENie/bin/linux/genie gmake
 ~/GENie/bin/linux/genie jcdb
+
+# Emscripten
+2.0.34
