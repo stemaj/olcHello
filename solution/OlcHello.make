@@ -70,12 +70,14 @@ ifeq ($(config),debug)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -151,12 +153,14 @@ ifeq ($(config),test)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -232,12 +236,14 @@ ifeq ($(config),release)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -313,12 +319,14 @@ ifeq ($(config),debug64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -394,12 +402,14 @@ ifeq ($(config),test64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -475,12 +485,14 @@ ifeq ($(config),release64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -557,12 +569,14 @@ ifeq ($(config),debuguniv64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -639,12 +653,14 @@ ifeq ($(config),testuniv64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -721,12 +737,14 @@ ifeq ($(config),releaseuniv64)
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
+	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleScreenElementsLevelRender.o \
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
+	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleScreenElementsLevelState.o \
 	$(OBJDIR)/game/src/state/src/exampleWalkLevelState.o \
@@ -858,6 +876,10 @@ $(OBJDIR)/game/src/render/src/exampleDialogRender.o: ../game/src/render/src/exam
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
+$(OBJDIR)/game/src/render/src/exampleMouseRender.o: ../game/src/render/src/exampleMouseRender.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/render/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
 $(OBJDIR)/game/src/render/src/examplePathLevelRender.o: ../game/src/render/src/examplePathLevelRender.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/render/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
@@ -879,6 +901,10 @@ $(OBJDIR)/game/src/state/src/exampleCollisionState.o: ../game/src/state/src/exam
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/game/src/state/src/exampleDialogState.o: ../game/src/state/src/exampleDialogState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/state/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/game/src/state/src/exampleMouseState.o: ../game/src/state/src/exampleMouseState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/state/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
