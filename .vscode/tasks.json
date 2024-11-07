@@ -6,7 +6,8 @@
     {
       "label": "build",
       "type": "shell",
-      "command": "cd solution && make -j8",
+      "command": "make -C ~/dev/olcHello/solution -j8",
+      "options": {"cwd": "solution"},
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -20,7 +21,8 @@
     {
       "label": "build release",
       "type": "shell",
-      "command": "cd solution && make -j8 config=release",
+      "command": "make -C ~/dev/olcHello/solution -j8 config=release",
+      "options": {"cwd": "solution"},
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -34,7 +36,8 @@
     {
       "label": "test",
       "type": "shell",
-      "command": "cd solution && make config=test -j8 && cd .. && ./solution/bin/Test/OlcHello",
+      "command": "make -C ~/dev/olcHello/solution -j8 config=test && ~/dev/olcHello/solution/bin/Test/OlcHello",
+      "options": {"cwd": "solution"},
       "problemMatcher": [],
       "group": {
         "kind": "test",
@@ -47,7 +50,7 @@
     {
       "label": "clean",
       "type": "shell",
-      "command": "cd solution && make -j8 clean",
+      "command": "make -C ~/dev/olcHello/solution -j8 clean",
       "problemMatcher": [],
       "group": {
         "kind": "build",
