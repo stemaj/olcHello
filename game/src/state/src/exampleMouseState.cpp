@@ -1,3 +1,4 @@
+#include <olcTemplate/game/src/engine/olcPGEX_QuickGUI.h>
 #include <game/src/state/exampleMouseState.hpp>
 #include <game/src/render/exampleMouseRender.hpp>
 #include <olcTemplate/game/src/render/levelRender.hpp>

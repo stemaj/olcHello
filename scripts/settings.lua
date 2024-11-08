@@ -3,4 +3,4 @@
 width = 800
 height = 360
 
-show_intro = true
+show_intro = false

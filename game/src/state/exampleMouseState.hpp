@@ -9,6 +9,9 @@
 
 namespace olc {
   class Decal;
+  namespace QuickGUI {
+    class Manager;
+  }
 }
 
 namespace stemaj {
@@ -40,8 +43,9 @@ private:
 
   PT<int> _tapPos;
   Tap _tap = Tap::TAP_NO;
-
   Tap _tapR = Tap::TAP_NO;
+
+  std::unique_ptr<olc::QuickGUI::Manager> _guiManager;
 
   friend class ExampleMouseRender;
 };
