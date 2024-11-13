@@ -1,8 +1,6 @@
 #include <game/src/render/exampleScreenElementsLevelRender.hpp>
 #include <game/src/state/exampleScreenElementsLevelState.hpp>
 #include <olcTemplate/game/textbox.hpp>
-#include <olcTemplate/game/src/engine/olcPixelGameEngine.h>
-#include <olcTemplate/game/src/engine/olcPGEX_TTF.h>
 #include <olcTemplate/game/fonts.hpp>
 #define UTF_CPP_CPLUSPLUS 202002L
 #include <olcTemplate/sdk/utfcpp/utf8.h>
@@ -38,11 +36,12 @@ namespace stemaj {
 using namespace stemaj;
 
 ExampleScreenElementsLevelRender::ExampleScreenElementsLevelRender() :
-  _impl(new ExampleScreenElementsLevelRenderImpl()) {}
+  _impl(std::make_unique<ExampleScreenElementsLevelRenderImpl>())
+{
+}
 
 ExampleScreenElementsLevelRender::~ExampleScreenElementsLevelRender()
 {
-  delete _impl;
 }
 
 void ExampleScreenElementsLevelRender::DoRender(olc::PixelGameEngine* pge, float fElapsedTime, State* state)

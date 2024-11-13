@@ -1,10 +1,6 @@
-#include "b2_body.h"
-#include "b2_math.h"
-#include "b2_settings.h"
 #include <array>
-#include <game/src/state/exampleCollisionState.hpp>
 #include <game/src/render/exampleCollisionRender.hpp>
-#include <olcTemplate/game/src/render/levelRender.hpp>
+#include <game/src/state/exampleCollisionState.hpp>
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/loadsave.hpp>
 #include <memory>

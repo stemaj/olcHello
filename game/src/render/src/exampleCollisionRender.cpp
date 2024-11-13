@@ -3,7 +3,6 @@
 #include <olcTemplate/game/src/render/helper/olcHelper.hpp>
 
 #include <memory>
-#include <string>
 #include <array>
 
 #include <olcTemplate/sdk/box2d/include/box2d.h>

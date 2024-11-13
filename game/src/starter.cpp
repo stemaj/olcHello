@@ -5,6 +5,7 @@
 #include <game/src/state/exampleScreenElementsLevelState.hpp>
 #include <game/src/state/exampleDialogState.hpp>
 #include <game/src/state/exampleMouseState.hpp>
+#include <olcTemplate/game/src/state/mainMenuState.hpp>
 #include <olcTemplate/game/sound.hpp>
 
 using namespace stemaj;
@@ -30,6 +31,9 @@ std::optional<std::unique_ptr<State>> Starter::SwitchState(const ButtonAction& a
 		case OPTION_6:
 			SO.StopMusic();
 			return std::make_unique<ExampleMouseState>();
+		case BACK:
+			SO.StopMusic();
+			return std::make_unique<MainMenuState>();
 		default:
 			return std::nullopt;
 	}

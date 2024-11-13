@@ -1,18 +1,10 @@
 #ifndef __EXAMPLEMOUSESTATE_HPP
 #define __EXAMPLEMOUSESTATE_HPP
 
-#include <cstdint>
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
 #define SOL_ALL_SAFETIES_ON 1
 #include <olcTemplate/sdk/sol2-3.3.0/sol.hpp>
-
-namespace olc {
-  class Decal;
-  namespace QuickGUI {
-    class Manager;
-  }
-}
 
 namespace stemaj {
 
@@ -45,7 +37,7 @@ private:
   Tap _tap = Tap::TAP_NO;
   Tap _tapR = Tap::TAP_NO;
 
-  std::unique_ptr<olc::QuickGUI::Manager> _guiManager;
+  Tap _tapBack = TAP_NO;
 
   friend class ExampleMouseRender;
 };

@@ -1,6 +1,7 @@
 #ifndef __EXAMPLESCREENELEMENTSLEVELRENDER_HPP
 #define __EXAMPLESCREENELEMENTSLEVELRENDER_HPP
 
+#include <memory>
 #include <olcTemplate/game/src/render/levelRender.hpp>
 
 namespace stemaj {
@@ -14,7 +15,7 @@ public:
   virtual ~ExampleScreenElementsLevelRender();
   void DoRender(olc::PixelGameEngine* pge, float fElapsedTime, State* state) override;
 private:
-  ExampleScreenElementsLevelRenderImpl* _impl;
+  std::unique_ptr<ExampleScreenElementsLevelRenderImpl> _impl;
 };
 
 } // namespace stemaj

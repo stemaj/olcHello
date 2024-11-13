@@ -1,11 +1,9 @@
-#include <olcTemplate/game/src/engine/olcPGEX_TTF.h>
 #include <game/src/render/exampleWalkLevelRender.hpp>
 #include <game/src/state/exampleWalkLevelState.hpp>
-#include <olcTemplate/game/src/engine/olcPixelGameEngine.h>
+#include <olcTemplate/game/src/engine/olcPGEX_TTF.h>
 #include <olcTemplate/game/fonts.hpp>
 #define UTF_CPP_CPLUSPLUS 202002L
 #include <olcTemplate/sdk/utfcpp/utf8.h>
-#include <string>
 
 using namespace stemaj;
 

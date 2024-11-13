@@ -1,6 +1,5 @@
 #include <game/src/render/examplePathLevelRender.hpp>
 #include <game/src/state/examplePathLevelState.hpp>
-#include <olcTemplate/game/src/engine/olcPixelGameEngine.h>
 
 using namespace stemaj;
 
