@@ -9,6 +9,9 @@ class ExampleWalkLevelRender : public LevelRender
 {
 public:
   void DoRender(olc::PixelGameEngine* pge, float fElapsedTime, State* state) override;
+
+  float cumulativeAngle = 0.0f; // Variable für den stetig zunehmenden Winkel
+
 };
 
 } // namespace stemaj
