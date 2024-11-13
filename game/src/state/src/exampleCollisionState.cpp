@@ -98,7 +98,7 @@ std::optional<std::unique_ptr<State>> ExampleCollisionState::Update(
   ImGui::End();
 #endif
 
-  return ChangeLevel(input, fElapsedTime);
+  return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }
 
 Render* ExampleCollisionState::GetRender()

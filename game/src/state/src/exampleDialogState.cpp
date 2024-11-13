@@ -23,7 +23,7 @@ std::optional<std::unique_ptr<State>> ExampleDialogState::Update(
 
   _mousePos = { input.mouseX, input.mouseY };
 
-  return ChangeLevel(input, fElapsedTime);
+  return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }
 
 Render* ExampleDialogState::GetRender()

@@ -1,6 +1,5 @@
 #include <game/src/state/exampleMouseState.hpp>
 #include <game/src/render/exampleMouseRender.hpp>
-#include <game/starter.hpp>
 
 using namespace stemaj;
 
@@ -30,12 +29,7 @@ std::optional<std::unique_ptr<State>> ExampleMouseState::ExampleMouseState::Upda
   else if (input.rightMouseReleased) _tapR = TAP_END;
   else _tapR = TAP_NO;
 
-  if (_tapBack == TAP_BEGIN)
-  {
-    Starter::SwitchState(BACK);
-  } 
-
-  return ChangeLevel(input, fElapsedTime);
+  return RequestForMainMenu(input.escapePressed || _tapBack == TAP_BEGIN, fElapsedTime);
 }
 
 Render* ExampleMouseState::GetRender()

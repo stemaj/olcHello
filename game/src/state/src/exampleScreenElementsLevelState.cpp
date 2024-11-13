@@ -53,7 +53,7 @@ std::optional<std::unique_ptr<State>>
     TextBoxLocation::LOWERRIGHT, fontName, FontSize::SMALL);
 	_textboxes.push_back(t3);
 
-  return ChangeLevel(input, fElapsedTime);
+  return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }
 
 Render* ExampleScreenElementsLevelState::GetRender()

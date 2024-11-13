@@ -94,7 +94,7 @@ std::optional<std::unique_ptr<State>> ExamplePathLevelState::ExamplePathLevelSta
   ImGui::End();
 #endif
 
-  return ChangeLevel(input, fElapsedTime);
+  return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }
 
 Render* ExamplePathLevelState::GetRender()
