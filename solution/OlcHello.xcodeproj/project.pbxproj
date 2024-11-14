@@ -275,14 +275,14 @@
 		5C5E69D5C84554CBD1335647 /* cpp20.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B8B0A7C571F0024C0E359D8 /* cpp20.h */; };
 		636510B6CF22B9EC58EDA454 /* unchecked.h in Headers */ = {isa = PBXBuildFile; fileRef = 92D973797E83A9886754B1A3 /* unchecked.h */; };
 		6C8959CDD84FB6E921AB444C /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BC91C2D27DC1C86D0C5F972 /* utf8.h */; };
-		500683E23CED44DAE53DABF7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8812139BF4F521DBFDF84F17 /* OpenGL.framework */; };
-		ABDB80709796701C404EE966 /* OpenGL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8812139BF4F521DBFDF84F17 /* OpenGL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		C922FF5CB55E02C71E711ABE /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58765AD7C48E41018D3BD19A /* GLUT.framework */; };
-		62EDF0A54EFD9C76B7B60195 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58765AD7C48E41018D3BD19A /* GLUT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		640E343B50F5F532F9455C50 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E8AAF43FCCB93448CFE770 /* Carbon.framework */; };
-		BB63516CA71E411850D6B962 /* Carbon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D3E8AAF43FCCB93448CFE770 /* Carbon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		2A65810F16CD47DD7F385CF3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E7B32185ABB2114E11E3DB /* AudioToolbox.framework */; };
-		7FCAD9A06B06DD0AD418F501 /* AudioToolbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 19E7B32185ABB2114E11E3DB /* AudioToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		51599B8E3D405D86E690C3A3 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A06BBFBE0C4FCEFE1552FC3A /* OpenGL.framework */; };
+		ABDB80709796701C404EE966 /* OpenGL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A06BBFBE0C4FCEFE1552FC3A /* OpenGL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		8AC1342576FD378FDF0F5086 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799870C5E5B057EFAE5DE788 /* GLUT.framework */; };
+		62EDF0A54EFD9C76B7B60195 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 799870C5E5B057EFAE5DE788 /* GLUT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		65614CE751480EDFFA9874FC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3417D2C0A0FAE000A9FD0E3D /* Carbon.framework */; };
+		BB63516CA71E411850D6B962 /* Carbon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3417D2C0A0FAE000A9FD0E3D /* Carbon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EB3446DCD79C0CAA400821C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9AD650A65ED5406FC4050B /* AudioToolbox.framework */; };
+		7FCAD9A06B06DD0AD418F501 /* AudioToolbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A9AD650A65ED5406FC4050B /* AudioToolbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -574,27 +574,28 @@
 		3BC91C2D27DC1C86D0C5F972 /* utf8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "utf8.h"; path = "utf8.h"; sourceTree = "<group>"; };
 		65FE5078D163E4FE5A3C86D7 /* exampleCollision.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "exampleCollision.lua"; path = "exampleCollision.lua"; sourceTree = "<group>"; };
 		A1E9DD2A8D66D16DB6E3D181 /* exampleDialog.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "exampleDialog.lua"; path = "exampleDialog.lua"; sourceTree = "<group>"; };
-		5781B1A0C3E644274CBFE6FF /* examplePathLevel.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "examplePathLevel.lua"; path = "examplePathLevel.lua"; sourceTree = "<group>"; };
-		B38A74B69FDB5FF8C83F4EBA /* intro.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "intro.lua"; path = "intro.lua"; sourceTree = "<group>"; };
-		220E07838EC7712D17278C07 /* mainMenu.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "mainMenu.lua"; path = "mainMenu.lua"; sourceTree = "<group>"; };
-		03702CFE6F8C1EEF38648B5C /* exampleCollision.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "exampleCollision.lua"; path = "exampleCollision.lua"; sourceTree = "<group>"; };
-		3DA65A1EA95FC5C832BFDFA2 /* settings.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "settings.lua"; path = "settings.lua"; sourceTree = "<group>"; };
-		8812139BF4F521DBFDF84F17 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGL.framework"; path = "/System/Library/Frameworks/OpenGL.framework"; sourceTree = "<absolute>"; };
-		58765AD7C48E41018D3BD19A /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "GLUT.framework"; path = "/System/Library/Frameworks/GLUT.framework"; sourceTree = "<absolute>"; };
-		D3E8AAF43FCCB93448CFE770 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Carbon.framework"; path = "/System/Library/Frameworks/Carbon.framework"; sourceTree = "<absolute>"; };
-		19E7B32185ABB2114E11E3DB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "/System/Library/Frameworks/AudioToolbox.framework"; sourceTree = "<absolute>"; };
+		3B508106A7DF42F1B0DB2309 /* exampleMouse.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "exampleMouse.lua"; path = "exampleMouse.lua"; sourceTree = "<group>"; };
+		38491006A4AEA38C2D874565 /* examplePathLevel.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "examplePathLevel.lua"; path = "examplePathLevel.lua"; sourceTree = "<group>"; };
+		3485810720D66C49493A5B0B /* intro.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "intro.lua"; path = "intro.lua"; sourceTree = "<group>"; };
+		0385F0516F3E5BFCF89D75D6 /* mainMenu.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "mainMenu.lua"; path = "mainMenu.lua"; sourceTree = "<group>"; };
+		24456B7890615D695939CAD6 /* exampleCollision.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "exampleCollision.lua"; path = "exampleCollision.lua"; sourceTree = "<group>"; };
+		1E1D44ED8AD6AE971336C971 /* settings.lua */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.lua; name = "settings.lua"; path = "settings.lua"; sourceTree = "<group>"; };
+		A06BBFBE0C4FCEFE1552FC3A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "OpenGL.framework"; path = "/System/Library/Frameworks/OpenGL.framework"; sourceTree = "<absolute>"; };
+		799870C5E5B057EFAE5DE788 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "GLUT.framework"; path = "/System/Library/Frameworks/GLUT.framework"; sourceTree = "<absolute>"; };
+		3417D2C0A0FAE000A9FD0E3D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Carbon.framework"; path = "/System/Library/Frameworks/Carbon.framework"; sourceTree = "<absolute>"; };
+		3A9AD650A65ED5406FC4050B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "/System/Library/Frameworks/AudioToolbox.framework"; sourceTree = "<absolute>"; };
 		C0B33DC32CCA3B597541C77A /* OlcHello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = "OlcHello"; path = "OlcHello"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E2C30B0DCEAACD0477FB3322 /* Frameworks */ = {
+		E31624B9CFFDE5B0784E4CCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				500683E23CED44DAE53DABF7 /* OpenGL.framework in Frameworks */,
-				C922FF5CB55E02C71E711ABE /* GLUT.framework in Frameworks */,
-				640E343B50F5F532F9455C50 /* Carbon.framework in Frameworks */,
-				2A65810F16CD47DD7F385CF3 /* AudioToolbox.framework in Frameworks */,
+				51599B8E3D405D86E690C3A3 /* OpenGL.framework in Frameworks */,
+				8AC1342576FD378FDF0F5086 /* GLUT.framework in Frameworks */,
+				65614CE751480EDFFA9874FC /* Carbon.framework in Frameworks */,
+				EB3446DCD79C0CAA400821C0 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,8 +610,8 @@
 				CC228F41385AD7D841643BFC /* genie.lua */,
 				CFECECF13BAF207C845FAF08 /* olcTemplate */,
 				EDF33EC1D9ED6713C25AFE23 /* scripts */,
-				C704C1C133C7F44B7C7783D8 /* Frameworks */,
-				7AE2784FE619C1E6EF23250A /* Products */,
+				683E01FDD40035871DB1C313 /* Frameworks */,
+				DB3F6C804777B4175081183B /* Products */,
 			);
 			name = "OlcHello";
 			path = "..";
@@ -1344,46 +1345,47 @@
 			children = (
 				65FE5078D163E4FE5A3C86D7 /* exampleCollision.lua */,
 				A1E9DD2A8D66D16DB6E3D181 /* exampleDialog.lua */,
-				5781B1A0C3E644274CBFE6FF /* examplePathLevel.lua */,
-				B38A74B69FDB5FF8C83F4EBA /* intro.lua */,
-				220E07838EC7712D17278C07 /* mainMenu.lua */,
-				4AFF66CE362531351F6BB600 /* profile */,
-				3DA65A1EA95FC5C832BFDFA2 /* settings.lua */,
+				3B508106A7DF42F1B0DB2309 /* exampleMouse.lua */,
+				38491006A4AEA38C2D874565 /* examplePathLevel.lua */,
+				3485810720D66C49493A5B0B /* intro.lua */,
+				0385F0516F3E5BFCF89D75D6 /* mainMenu.lua */,
+				8B65417F778B0BE660D190B1 /* profile */,
+				1E1D44ED8AD6AE971336C971 /* settings.lua */,
 			);
 			name = "scripts";
 			path = "scripts";
 			sourceTree = "<group>";
 		};
-		4AFF66CE362531351F6BB600 /* profile */ = {
+		8B65417F778B0BE660D190B1 /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				8B293155777A1C97A0DE0A59 /* 1 */,
+				0C243EA6F87429E821D917AA /* 1 */,
 			);
 			name = "profile";
 			path = "profile";
 			sourceTree = "<group>";
 		};
-		8B293155777A1C97A0DE0A59 /* 1 */ = {
+		0C243EA6F87429E821D917AA /* 1 */ = {
 			isa = PBXGroup;
 			children = (
-				03702CFE6F8C1EEF38648B5C /* exampleCollision.lua */,
+				24456B7890615D695939CAD6 /* exampleCollision.lua */,
 			);
 			name = "1";
 			path = "1";
 			sourceTree = "<group>";
 		};
-		C704C1C133C7F44B7C7783D8 /* Frameworks */ = {
+		683E01FDD40035871DB1C313 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8812139BF4F521DBFDF84F17 /* OpenGL.framework */,
-				58765AD7C48E41018D3BD19A /* GLUT.framework */,
-				D3E8AAF43FCCB93448CFE770 /* Carbon.framework */,
-				19E7B32185ABB2114E11E3DB /* AudioToolbox.framework */,
+				A06BBFBE0C4FCEFE1552FC3A /* OpenGL.framework */,
+				799870C5E5B057EFAE5DE788 /* GLUT.framework */,
+				3417D2C0A0FAE000A9FD0E3D /* Carbon.framework */,
+				3A9AD650A65ED5406FC4050B /* AudioToolbox.framework */,
 			);
 			name = "Frameworks";
 			sourceTree = "<group>";
 		};
-		7AE2784FE619C1E6EF23250A /* Products */ = {
+		DB3F6C804777B4175081183B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				C0B33DC32CCA3B597541C77A /* OlcHello */,
@@ -1396,11 +1398,11 @@
 /* Begin PBXNativeTarget section */
 		A62B911D9224B06FBB5695F4 /* OlcHello */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7469392932D558A3C7EBBA7 /* Build configuration list for PBXNativeTarget "OlcHello" */;
+			buildConfigurationList = A899AB3E94806D363DD1D353 /* Build configuration list for PBXNativeTarget "OlcHello" */;
 			buildPhases = (
-				69D9AB3E55C06D36FE10D453 /* Resources */,
-				58A7F360448EB558EDDE1B76 /* Sources */,
-				E2C30B0DCEAACD0477FB3322 /* Frameworks */,
+				81A1F3606D88B55816D91B76 /* Resources */,
+				59FA0B0D45E1CD04EE313422 /* Sources */,
+				E31624B9CFFDE5B0784E4CCE /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1430,7 +1432,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		69D9AB3E55C06D36FE10D453 /* Resources */ = {
+		81A1F3606D88B55816D91B76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1441,7 +1443,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		58A7F360448EB558EDDE1B76 /* Sources */ = {
+		59FA0B0D45E1CD04EE313422 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1780,7 +1782,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A7469392932D558A3C7EBBA7 /* Build configuration list for PBXNativeTarget "OlcHello" */ = {
+		A899AB3E94806D363DD1D353 /* Build configuration list for PBXNativeTarget "OlcHello" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6BCA290627FD61AAB2F65A7 /* Debug */,

@@ -663,6 +663,7 @@
     <None Include="..\scripts\intro.lua" />
     <None Include="..\scripts\settings.lua" />
     <None Include="..\scripts\mainMenu.lua" />
+    <None Include="..\scripts\exampleMouse.lua" />
     <None Include="..\scripts\profile\1\exampleCollision.lua" />
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf" />
     <None Include="..\olcTemplate\assets\fonts\dogica.ttf" />

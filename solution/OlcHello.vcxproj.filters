@@ -190,6 +190,9 @@
     <None Include="..\scripts\mainMenu.lua">
       <Filter>scripts</Filter>
     </None>
+    <None Include="..\scripts\exampleMouse.lua">
+      <Filter>scripts</Filter>
+    </None>
     <None Include="..\scripts\profile\1\exampleCollision.lua">
       <Filter>scripts\profile\1</Filter>
     </None>

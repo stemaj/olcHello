@@ -8,6 +8,7 @@ namespace stemaj {
 class ExampleMouseRender : public LevelRender
 {
 public:
+  explicit ExampleMouseRender();
   void DoRender(olc::PixelGameEngine* pge, float fElapsedTime, State* state) override;
 };
 
