@@ -84,14 +84,13 @@ void ExampleScreenElementsLevelRender::DoRender(olc::PixelGameEngine* pge, float
 
   std::vector<olc::vf2d> uvs;
   uvs.resize(points.size());
-  pge->DrawPolygonDecal(nullptr, points, uvs, olc::Pixel(screenElementsLevel->_color.r, 
-    screenElementsLevel->_color.g, screenElementsLevel->_color.b));
+  pge->DrawPolygonDecal(nullptr, points, uvs, olc::Pixel(screenElementsLevel->_color[0], 
+    screenElementsLevel->_color[1], screenElementsLevel->_color[2]));
 
   pge->FillRectDecal({ (float)screenElementsLevel->_rect.pos.x, 
     (float)screenElementsLevel->_rect.pos.y },
     { (float)screenElementsLevel->_rect.size.x, 
     (float)screenElementsLevel->_rect.size.y },
-    olc::Pixel(screenElementsLevel->_color.r, 
-      screenElementsLevel->_color.g, screenElementsLevel->_color.b));
-
+    olc::Pixel(screenElementsLevel->_color[0], 
+      screenElementsLevel->_color[1], screenElementsLevel->_color[2]));
 }

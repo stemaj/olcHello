@@ -1,3 +1,4 @@
+#include "olcTemplate/game/guiElements.hpp"
 #include <game/src/render/examplePathLevelRender.hpp>
 #include <game/src/state/examplePathLevelState.hpp>
 
@@ -7,8 +8,8 @@ void ExamplePathLevelRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
 {
   auto pathLevel = static_cast<ExamplePathLevelState*>(state);
 
-  auto toPixelColor = [](const ExamplePathLevelState::Color& c){
-    return olc::Pixel{ c.r, c.g, c.b, c.alpha };
+  auto toPixelColor = [](const MainMenuColor& c){
+    return olc::Pixel{ c[0], c[1], c[2], c[3] };
   };
 
   pge->Clear(toPixelColor(pathLevel->_colorBackground));

@@ -30,15 +30,15 @@ std::optional<std::unique_ptr<State>>
 
   if (overlaps(_rect, _circle))
   {
-    _color.r = 130;
-    _color.g = 130;
-    _color.b = 130;
+    _color[0] = 130;
+    _color[1] = 130;
+    _color[2] = 130;
   }
   else
   {
-    _color.r = 200;
-    _color.g = 200;
-    _color.b = 200;
+    _color[0] = 200;
+    _color[1] = 200;
+    _color[2] = 200;
   }
 
   std::string fontName = "CutiePatootie-Rgjv";

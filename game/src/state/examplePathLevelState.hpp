@@ -1,10 +1,9 @@
 #ifndef __EXAMPLEPATHLEVELSTATE_HPP
 #define __EXAMPLEPATHLEVELSTATE_HPP
 
+#include "olcTemplate/game/guiElements.hpp"
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
-#define SOL_ALL_SAFETIES_ON 1
-#include <olcTemplate/sdk/sol2-3.3.0/sol.hpp>
 #include <olcTemplate/game/src/tools/pathfollower.hpp>
 
 namespace stemaj {
@@ -35,31 +34,19 @@ private:
   PT<float> _objSource;
   std::vector<PT<float>> _polygonSource;
 
-  struct Color
-  {
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-    uint8_t alpha;
-    friend std::ostream& operator<<(std::ostream& os, const Color& obj) {
-      os << "{ r: " << obj.r << ", g: " << obj.g << ", b: " << obj.b << ", alpha: " << obj.alpha << " }\n";
-      return os;
-    }
 
-  };
-  Color _colorBackground;
-  Color _colorObject;
-  Color _colorStart;
-  Color _colorEnd;
-  Color _colorPath;
-  Color _colorPolygon;
+  MainMenuColor _colorBackground;
+  MainMenuColor _colorObject;
+  MainMenuColor _colorStart;
+  MainMenuColor _colorEnd;
+  MainMenuColor _colorPath;
+  MainMenuColor _colorPolygon;
 
   Pathfollower _pathFollower;
 
   void InitValues();
   void LoadLevelData() override;
   void SaveLevelData() override;
-  sol::state _lua;
   std::unique_ptr<ExamplePathLevelRender> _render;
 
   friend class ExamplePathLevelRender;

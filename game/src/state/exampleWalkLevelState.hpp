@@ -4,8 +4,6 @@
 #include <cstdint>
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
-#define SOL_ALL_SAFETIES_ON 1
-#include <olcTemplate/sdk/sol2-3.3.0/sol.hpp>
 
 namespace olc {
   class Decal;
@@ -32,7 +30,6 @@ public:
 private:
   void LoadLevelData() override;
   void SaveLevelData() override;
-  sol::state _lua;
   std::unique_ptr<ExampleWalkLevelRender> _render;
 
   uint8_t _currentKind = 2;
