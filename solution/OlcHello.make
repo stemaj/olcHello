@@ -50,19 +50,19 @@ ifeq ($(config),debug)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"."
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -133,19 +133,19 @@ ifeq ($(config),test)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"."
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"."
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -216,19 +216,19 @@ ifeq ($(config),release)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"."
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -299,19 +299,19 @@ ifeq ($(config),debug64)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -382,19 +382,19 @@ ifeq ($(config),test64)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -465,19 +465,19 @@ ifeq ($(config),release64)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -m64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -m64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -m64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -549,19 +549,19 @@ ifeq ($(config),debuguniv64)
   TARGETDIR           = bin/Debug
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_DEBUG
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -633,19 +633,19 @@ ifeq ($(config),testuniv64)
   TARGETDIR           = bin/Test
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DRUN_TESTS
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -g -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
@@ -717,19 +717,19 @@ ifeq ($(config),releaseuniv64)
   TARGETDIR           = bin/Release
   TARGET              = $(TARGETDIR)/OlcHello
   DEFINES            += -DSTEMAJ_RELEASE
-  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/local/Cellar/libpng/1.6.43/include"
+  INCLUDES           += -I".." -I"../olcTemplate/sdk/box2d/include" -I"../olcTemplate/sdk/imgui-1.90.4" -I"../olcTemplate/sdk/imgui-1.90.4/backends" -I"../olcTemplate/sdk/sol2-3.3.0" -I"../olcTemplate/sdk/lua-5.4.2/include" -I"../olcTemplate/sdk/soloud/include" -I"../olcTemplate/sdk/freetype-2.13.1/include" -I"../olcTemplate/sdk/lz4-1.10.0" -I"../../../../../usr/include"
   ALL_CPPFLAGS       += $(CPPFLAGS) -MMD -MP -MP $(DEFINES) $(INCLUDES)
   ALL_ASMFLAGS       += $(ASMFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
   ALL_CFLAGS         += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
-  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64 -std=c++20 -Wall
+  ALL_CXXFLAGS       += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64 -std=c++20
   ALL_OBJCFLAGS      += $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64
   ALL_OBJCPPFLAGS    += $(CXXFLAGS) $(CFLAGS) $(ALL_CPPFLAGS) $(ARCH) -O3 -arch x86_64 -arch ppc64 -std=c++20
   ALL_RESFLAGS       += $(RESFLAGS) $(DEFINES) $(INCLUDES)
-  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/local/Cellar/freetype/2.13.2/lib" -L"../../../../../usr/local/Cellar/libpng/1.6.43/lib" -L"../olcTemplate/sdk/box2d/macos" -L"../olcTemplate/sdk/lua-5.4.2/macos" -L"../olcTemplate/sdk/soloud/macos" -L"." -arch x86_64 -arch ppc64
+  ALL_LDFLAGS        += $(LDFLAGS) -L"../../../../../usr/lib" -L"../olcTemplate/sdk/box2d/linux" -L"../olcTemplate/sdk/lua-5.4.2/linux" -L"../olcTemplate/sdk/soloud/linux" -L"." -s -arch x86_64 -arch ppc64
   LIBDEPS            +=
   LDDEPS             +=
   LDRESP              =
-  LIBS               += $(LDDEPS) -lbox2d -lfreetype -lpng -llua -lsoloud_static -framework OpenGL -framework GLUT -framework Carbon -framework AudioToolbox
+  LIBS               += $(LDDEPS) -lfreetype -lX11 -lGL -lpthread -lpng -lstdc++fs -llua54 -ldl -lsoloud_static -lasound -lbox2d
   EXTERNAL_LIBS      +=
   LINKOBJS            = $(OBJECTS)
   LINKCMD             = $(CXX) -o $(TARGET) $(LINKOBJS) $(RESOURCES) $(ARCH) $(ALL_LDFLAGS) $(LIBS)
