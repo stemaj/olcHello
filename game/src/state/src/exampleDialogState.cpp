@@ -33,7 +33,7 @@ Render* ExampleDialogState::GetRender()
 
 void ExampleDialogState::LoadLevelData()
 {
-  _dialog.Load("exampleDialog");
+  _dialog.Load("scripts/exampleDialog.lua");
 }
 
 void ExampleDialogState::SaveLevelData()
