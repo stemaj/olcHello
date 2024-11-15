@@ -12,7 +12,7 @@ ExampleMouseRender::ExampleMouseRender()
 {
   _gui->setColNormal(255,255,255,255);
 
-  LS.Init("exampleMouse");
+  LS.Init("scripts/exampleMouse.lua", true);
   auto graphBtns = LS.ButtonGraphics();
   for (const auto& [key,value] : graphBtns)
   {

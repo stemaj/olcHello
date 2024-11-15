@@ -110,7 +110,7 @@ void ExampleCollisionState::LoadLevelData()
 {
   std::cout << "loading" << std::endl;
   
-  LS.Init("exampleCollision");
+  LS.Init("scripts/exampleCollision.lua", true);
   
   SCALE = LS.Float("scale");
   

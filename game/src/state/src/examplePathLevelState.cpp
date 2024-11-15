@@ -107,7 +107,7 @@ void ExamplePathLevelState::LoadLevelData()
 {
   std::cout << "loading" << std::endl;
 
-  LS.Init("examplePathLevel");
+  LS.Init("scripts/examplePathLevel.lua", true);
   _gridDimension = LS.PTInt("grid");
   _objSource = LS.PTFloat("start");
   auto cols = LS.Colors();
