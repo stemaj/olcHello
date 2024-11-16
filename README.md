@@ -9,7 +9,9 @@ git submodule update --init --recursive
 ~/GENie/bin/linux/genie xcode15
 ~/GENie/bin/linux/genie vs2022
 ~/GENie/bin/linux/genie gmake
+~/GENie/bin/linux/genie --os=macosx gmake
 ~/GENie/bin/linux/genie jcdb
 
 # Emscripten
-2.0.34
+./emsdk install 2.0.34
+./emsdk activate 2.0.34
