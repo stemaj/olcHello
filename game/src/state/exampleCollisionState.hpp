@@ -4,10 +4,7 @@
 #include <cstdint>
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
-
-class b2World;
-class b2BodyDef;
-class b2Body;
+#include <olcTemplate/sdk/box2d/include/b2_body.h>
 
 namespace stemaj {
 
