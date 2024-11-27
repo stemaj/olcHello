@@ -1,3 +1,4 @@
+#include "olcTemplate/game/assets.hpp"
 #include <cmath>
 #include <game/src/render/exampleWalkLevelRender.hpp>
 #include <game/src/state/exampleWalkLevelState.hpp>
@@ -61,6 +62,8 @@ void ExampleWalkLevelRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
     {(float)walkLevel->_sourceRectPos.x,(float)walkLevel->_sourceRectPos.y},
     {(float)walkLevel->_sourceRectSize.x,(float)walkLevel->_sourceRectSize.y},
     {walkLevel->_scale.x,walkLevel->_scale.y});
+
+  pge->DrawDecal({50.0f,50.0f}, AS.Decal("Sing_With_Me"));
 
   auto font = FT.Font("CutiePatootie-Rgjv", FontSize::NORMAL);
   auto r = font->RenderStringToDecal(utf8::utf8to32(std::string("Ä Bik ß")), olc::GREEN);
