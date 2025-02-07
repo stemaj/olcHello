@@ -331,15 +331,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\olcTemplate\game\src\engine\imgui_impl_pge.h" />
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TTF.h" />
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TransformedView.h" />
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPixelGameEngine.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Animate2D.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Camera2D.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Geometry2D.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Geometry2D_v2.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Palette.h" />
     <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_QuickGUI.h" />
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TTF.h" />
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TransformedView.h" />
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPixelGameEngine.h" />
     <ClInclude Include="..\olcTemplate\sdk\box2d\include\b2_api.h" />
     <ClInclude Include="..\olcTemplate\sdk\box2d\include\b2_block_allocator.h" />
     <ClInclude Include="..\olcTemplate\sdk\box2d\include\b2_body.h" />
@@ -503,12 +503,14 @@
     <ClInclude Include="..\game\src\render\exampleScreenElementsLevelRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleMouseRender.hpp" />
     <ClInclude Include="..\game\src\render\exampleWalkLevelRender.hpp" />
-    <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
+    <ClInclude Include="..\game\src\render\exampleCoroutineRender.hpp" />
     <ClInclude Include="..\game\src\state\exampleDialogState.hpp" />
     <ClInclude Include="..\game\src\state\examplePathLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleScreenElementsLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleWalkLevelState.hpp" />
     <ClInclude Include="..\game\src\state\exampleMouseState.hpp" />
+    <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
+    <ClInclude Include="..\game\src\state\exampleCoroutineState.hpp" />
     <ClInclude Include="..\olcTemplate\game\animation.hpp" />
     <ClInclude Include="..\olcTemplate\game\assets.hpp" />
     <ClInclude Include="..\olcTemplate\game\coordinates.hpp" />
@@ -546,6 +548,8 @@
     <ClInclude Include="..\olcTemplate\sdk\lua-5.4.2\include\lua.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol.hpp" />
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol\config.hpp" />
+    <ClInclude Include="..\olcTemplate\sdk\json-nlohmann-3.11.3\json.hpp" />
+    <ClInclude Include="..\olcTemplate\sdk\json-nlohmann-3.11.3\json_fwd.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.c">
@@ -564,6 +568,8 @@
     </ClCompile>
     <ClCompile Include="..\game\src\render\src\exampleWalkLevelRender.cpp">
     </ClCompile>
+    <ClCompile Include="..\game\src\render\src\exampleCoroutineRender.cpp">
+    </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleCollisionState.cpp">
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleDialogState.cpp">
@@ -572,13 +578,13 @@
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleScreenElementsLevelState.cpp">
     </ClCompile>
-    <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
-    </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleMouseState.cpp">
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
+    <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
+    <ClCompile Include="..\game\src\state\src\exampleCoroutineState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\coordinates.cpp">
     </ClCompile>
@@ -601,6 +607,8 @@
     <ClCompile Include="..\olcTemplate\game\src\gui.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\physicalWorld.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\engine\src\olcPixelGameEngine.cpp">
     </ClCompile>
@@ -654,9 +662,10 @@
   <ItemGroup>
     <None Include="..\genie.lua" />
     <None Include="..\assets\sheets\bik.lua" />
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.lua" />
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua" />
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.lua" />
     <None Include="..\scripts\exampleCollision.lua" />
     <None Include="..\scripts\exampleDialog.lua" />
     <None Include="..\scripts\examplePathLevel.lua" />
@@ -690,10 +699,6 @@
       <DeploymentContent>true</DeploymentContent>
       <Link>olcTemplate\assets\png\back-button.png</Link>
     </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
-      <DeploymentContent>true</DeploymentContent>
-      <Link>olcTemplate\assets\sheets\Sing_With_Me.png</Link>
-    </Image>
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.png">
       <DeploymentContent>true</DeploymentContent>
       <Link>olcTemplate\assets\sheets\pretty_pretty_bg_25pc.png</Link>
@@ -701,6 +706,14 @@
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png">
       <DeploymentContent>true</DeploymentContent>
       <Link>olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png</Link>
+    </Image>
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
+      <DeploymentContent>true</DeploymentContent>
+      <Link>olcTemplate\assets\sheets\Sing_With_Me.png</Link>
+    </Image>
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png">
+      <DeploymentContent>true</DeploymentContent>
+      <Link>olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png</Link>
     </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -69,6 +69,7 @@ ifeq ($(config),debug)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -76,6 +77,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -152,6 +154,7 @@ ifeq ($(config),test)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -159,6 +162,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -235,6 +239,7 @@ ifeq ($(config),release)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -242,6 +247,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -318,6 +324,7 @@ ifeq ($(config),debug64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -325,6 +332,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -401,6 +409,7 @@ ifeq ($(config),test64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -408,6 +417,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -484,6 +494,7 @@ ifeq ($(config),release64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -491,6 +502,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -568,6 +580,7 @@ ifeq ($(config),debuguniv64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -575,6 +588,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -652,6 +666,7 @@ ifeq ($(config),testuniv64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -659,6 +674,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -736,6 +752,7 @@ ifeq ($(config),releaseuniv64)
   OBJRESP             =
   OBJECTS := \
 	$(OBJDIR)/game/src/render/src/exampleCollisionRender.o \
+	$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o \
 	$(OBJDIR)/game/src/render/src/exampleDialogRender.o \
 	$(OBJDIR)/game/src/render/src/exampleMouseRender.o \
 	$(OBJDIR)/game/src/render/src/examplePathLevelRender.o \
@@ -743,6 +760,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/game/src/render/src/exampleWalkLevelRender.o \
 	$(OBJDIR)/game/src/starter.o \
 	$(OBJDIR)/game/src/state/src/exampleCollisionState.o \
+	$(OBJDIR)/game/src/state/src/exampleCoroutineState.o \
 	$(OBJDIR)/game/src/state/src/exampleDialogState.o \
 	$(OBJDIR)/game/src/state/src/exampleMouseState.o \
 	$(OBJDIR)/game/src/state/src/examplePathLevelState.o \
@@ -872,6 +890,10 @@ $(OBJDIR)/game/src/render/src/exampleCollisionRender.o: ../game/src/render/src/e
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
+$(OBJDIR)/game/src/render/src/exampleCoroutineRender.o: ../game/src/render/src/exampleCoroutineRender.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/render/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
 $(OBJDIR)/game/src/render/src/exampleDialogRender.o: ../game/src/render/src/exampleDialogRender.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/render/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
@@ -897,6 +919,10 @@ $(OBJDIR)/game/src/starter.o: ../game/src/starter.cpp $(GCH) $(MAKEFILE) | $(OBJ
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/game/src/state/src/exampleCollisionState.o: ../game/src/state/src/exampleCollisionState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/state/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/game/src/state/src/exampleCoroutineState.o: ../game/src/state/src/exampleCoroutineState.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/game/src/state/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 

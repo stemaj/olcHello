@@ -94,6 +94,9 @@
     <Filter Include="olcTemplate\sdk\sol2-3.3.0\sol">
       <UniqueIdentifier>{82932312-6EB9-ED78-57FF-724443C41245}</UniqueIdentifier>
     </Filter>
+    <Filter Include="olcTemplate\sdk\json-nlohmann-3.11.3">
+      <UniqueIdentifier>{0CE37C51-F8C9-3E49-A11A-A5668DE0B7AF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="game\src\render\src">
       <UniqueIdentifier>{03B289B4-6F13-67C2-F880-AD7464E19D81}</UniqueIdentifier>
     </Filter>
@@ -163,13 +166,16 @@
     <None Include="..\assets\sheets\bik.lua">
       <Filter>assets\sheets</Filter>
     </None>
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua">
-      <Filter>olcTemplate\assets\sheets</Filter>
-    </None>
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.lua">
       <Filter>olcTemplate\assets\sheets</Filter>
     </None>
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.lua">
+      <Filter>olcTemplate\assets\sheets</Filter>
+    </None>
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua">
+      <Filter>olcTemplate\assets\sheets</Filter>
+    </None>
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.lua">
       <Filter>olcTemplate\assets\sheets</Filter>
     </None>
     <None Include="..\scripts\exampleCollision.lua">
@@ -222,15 +228,6 @@
     <ClInclude Include="..\olcTemplate\game\src\engine\imgui_impl_pge.h">
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TTF.h">
-      <Filter>olcTemplate\game\src\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TransformedView.h">
-      <Filter>olcTemplate\game\src\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\src\engine\olcPixelGameEngine.h">
-      <Filter>olcTemplate\game\src\engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\engine\olcUTIL_Animate2D.h">
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
@@ -247,6 +244,15 @@
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_QuickGUI.h">
+      <Filter>olcTemplate\game\src\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TTF.h">
+      <Filter>olcTemplate\game\src\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPGEX_TransformedView.h">
+      <Filter>olcTemplate\game\src\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\engine\olcPixelGameEngine.h">
       <Filter>olcTemplate\game\src\engine</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\sdk\box2d\include\b2_api.h">
@@ -738,8 +744,8 @@
     <ClInclude Include="..\game\src\render\exampleWalkLevelRender.hpp">
       <Filter>game\src\render</Filter>
     </ClInclude>
-    <ClInclude Include="..\game\src\state\exampleCollisionState.hpp">
-      <Filter>game\src\state</Filter>
+    <ClInclude Include="..\game\src\render\exampleCoroutineRender.hpp">
+      <Filter>game\src\render</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\state\exampleDialogState.hpp">
       <Filter>game\src\state</Filter>
@@ -754,6 +760,12 @@
       <Filter>game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\game\src\state\exampleMouseState.hpp">
+      <Filter>game\src\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\src\state\exampleCollisionState.hpp">
+      <Filter>game\src\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\game\src\state\exampleCoroutineState.hpp">
       <Filter>game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\animation.hpp">
@@ -867,6 +879,12 @@
     <ClInclude Include="..\olcTemplate\sdk\sol2-3.3.0\sol\config.hpp">
       <Filter>olcTemplate\sdk\sol2-3.3.0\sol</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\sdk\json-nlohmann-3.11.3\json.hpp">
+      <Filter>olcTemplate\sdk\json-nlohmann-3.11.3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\sdk\json-nlohmann-3.11.3\json_fwd.hpp">
+      <Filter>olcTemplate\sdk\json-nlohmann-3.11.3</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\olcTemplate\sdk\lz4-1.10.0\lz4.c">
@@ -893,6 +911,9 @@
     <ClCompile Include="..\game\src\render\src\exampleWalkLevelRender.cpp">
       <Filter>game\src\render\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\game\src\render\src\exampleCoroutineRender.cpp">
+      <Filter>game\src\render\src</Filter>
+    </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleCollisionState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
@@ -905,16 +926,16 @@
     <ClCompile Include="..\game\src\state\src\exampleScreenElementsLevelState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
-      <Filter>game\src\state\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleMouseState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
-      <Filter>olcTemplate\game\src</Filter>
+    <ClCompile Include="..\game\src\state\src\exampleWalkLevelState.cpp">
+      <Filter>game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
+    <ClCompile Include="..\game\src\state\src\exampleCoroutineState.cpp">
+      <Filter>game\src\state\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\coordinates.cpp">
@@ -948,6 +969,9 @@
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\physicalWorld.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\engine\src\olcPixelGameEngine.cpp">
@@ -1036,13 +1060,16 @@
     <Image Include="..\olcTemplate\assets\png\back-button.png">
       <Filter>olcTemplate\assets\png</Filter>
     </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
-      <Filter>olcTemplate\assets\sheets</Filter>
-    </Image>
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.png">
       <Filter>olcTemplate\assets\sheets</Filter>
     </Image>
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png">
+      <Filter>olcTemplate\assets\sheets</Filter>
+    </Image>
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
+      <Filter>olcTemplate\assets\sheets</Filter>
+    </Image>
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png">
       <Filter>olcTemplate\assets\sheets</Filter>
     </Image>
   </ItemGroup>

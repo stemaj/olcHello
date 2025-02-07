@@ -1,4 +1,5 @@
 #include <game/starter.hpp>
+#include <game/src/state/exampleCoroutineState.hpp>
 #include <game/src/state/exampleCollisionState.hpp>
 #include <game/src/state/examplePathLevelState.hpp>
 #include <game/src/state/exampleWalkLevelState.hpp>
@@ -31,6 +32,9 @@ std::optional<std::unique_ptr<State>> Starter::SwitchState(const ButtonAction& a
 		case OPTION_6:
 			SO.StopMusic();
 			return std::make_unique<ExampleMouseState>();
+		case OPTION_7:
+			SO.StopMusic();
+			return std::make_unique<ExampleCoroutineState>();
 		case BACK:
 			SO.StopMusic();
 			return std::make_unique<MainMenuState>();
