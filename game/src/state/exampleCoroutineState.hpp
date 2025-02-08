@@ -3,7 +3,16 @@
 
 #include <olcTemplate/game/coordinates.hpp>
 #include <olcTemplate/game/src/state/levelState.hpp>
-#include <coroutine>
+
+#ifdef __EMSCRIPTEN__
+  #include <experimental/coroutine>
+  using suspend_never = std::experimental::suspend_never;
+  using suspend_always = std::experimental::suspend_always;
+#else
+  #include <coroutine>
+  using suspend_never = std::suspend_never;
+  using suspend_always = std::suspend_always;
+#endif
 
 namespace stemaj {
 
@@ -35,8 +44,8 @@ public:
   struct Coroutine {
     struct promise_type {
       Coroutine get_return_object() { return {}; } // Rückgabe eines leeren Coroutine-Objekts
-      std::suspend_never initial_suspend() { return {}; } // Keine Anfangspause
-      std::suspend_always final_suspend() noexcept { return {}; } // Coroutine am Ende pausieren
+      suspend_never initial_suspend() { return {}; } // Keine Anfangspause
+      suspend_always final_suspend() noexcept { return {}; } // Coroutine am Ende pausieren
       void return_void() {} // Keine Rückgabe
       void unhandled_exception() { std::terminate(); } // Fehlerbehandlung
     };

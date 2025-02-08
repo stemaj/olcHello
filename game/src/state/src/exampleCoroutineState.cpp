@@ -86,6 +86,6 @@ ExampleCoroutineState::Coroutine ExampleCoroutineState::SimulateBall(Ball& ball)
     }
 
     //std::this_thread::sleep_for(std::chrono::milliseconds(16)); // Verzögerung simulieren
-    co_await std::suspend_always{};
+    co_await suspend_always{};
   }
 }
