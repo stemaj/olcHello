@@ -10,6 +10,8 @@ class ExampleCoroutineRender : public LevelRender
 public:
   explicit ExampleCoroutineRender() {}
   void DoRender(olc::PixelGameEngine* pge, float fElapsedTime, State* state) override;
+
+ 
 };
 
 } // namespace stemaj
