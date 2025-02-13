@@ -18,6 +18,13 @@ float fov = 100.0f;   // Brennweite
 
     // Kamera-Position
     float camX = 0.0f, camY = 0.0f, camZ = 0.0f; // Startet leicht nach hinten versetzt
+    float baseCamY = camY; // Basis-Kamerahöhe (zum Zurücksetzen)
+
+ // "Bump"-Effekt
+ bool isBumping = false;
+ float bumpTime = 0.0f;
+ float bumpDuration = 0.3f; // Gesamtdauer des Bumps
+ float bumpHeight = 10.0f;  // Maximale Hubhöhe
 
     // Startposition
     float startX = 6000.0f, startY = 200.0f, startZPos = 2500.0f;
@@ -66,6 +73,23 @@ void ExampleCoroutineRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
   if (pge->GetKey(olc::Key::W).bHeld) camY += 50.0f * fElapsedTime;
   if (pge->GetKey(olc::Key::S).bHeld) camY -= 50.0f * fElapsedTime;
 
+// "Bump"-Effekt starten
+if (pge->GetMouse(0).bReleased && !isBumping) {
+    isBumping = true;
+    bumpTime = 0.0f;
+}
+
+// "Bump"-Animation
+if (isBumping) {
+    bumpTime += fElapsedTime;
+    if (bumpTime < bumpDuration) {
+        // Sinusförmige Bewegung für sanftes Hoch- und Runtergehen
+        camY = baseCamY + bumpHeight * sinf((bumpTime / bumpDuration) * 3.14159f);
+    } else {
+        camY = baseCamY;
+        isBumping = false;
+    }
+}
 
   // *** Gitter zeichnen mit steuerbaren Linien ***
   for (float z = startZ; z < depth; z += gridSize) {
