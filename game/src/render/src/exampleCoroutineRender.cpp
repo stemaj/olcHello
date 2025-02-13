@@ -11,6 +11,14 @@ float fov = 100.0f;   // Brennweite
     float gridHeight = 500.0f; // Höhe des Gitters (y-Richtung)
     float startZ = -20.0f;  // Starttiefe des Gitters
 
+    // Steuerung der Gitterlinien
+    bool drawXLines = true; // Linien in x-Richtung (vertikal)
+    bool drawYLines = true; // Linien in y-Richtung (horizontal)
+    bool drawZLines = true; // Linien in z-Richtung (Tiefe)
+
+    // Kamera-Position
+    float camX = 0.0f, camY = 0.0f, camZ = 0.0f; // Startet leicht nach hinten versetzt
+
     // Startposition
     float startX = 6000.0f, startY = 200.0f, startZPos = 2500.0f;
     // Endposition
@@ -20,11 +28,21 @@ float fov = 100.0f;   // Brennweite
     // Geschwindigkeit
     float speed = 800.0f;
 
-    // Perspektivische Projektion
+    // Perspektivische Projektion mit Kameraverschiebung
     olc::vi2d Project(float x, float y, float z) {
-        float scale = fov / (z + fov);
-        int screenX = int(CO.W / 2 + x * scale);
-        int screenY = int(CO.H / 2 - y * scale);
+        // Relativ zur Kamera berechnen
+        float relX = x - camX;
+        float relY = y - camY;
+        float relZ = z - camZ;
+
+        // Mindest-Z-Wert setzen (verhindert starke Verzögerungen bei z ≈ 0)
+        float minZ = 10.0f;  // Setze die Mindesttiefe auf 10
+        if (relZ < minZ) relZ = minZ;
+
+        // Projektion auf 2D-Bildschirm
+        float scale = fov / (relZ + fov);
+        int screenX = int(CO.W / 2.f + relX * scale);
+        int screenY = int(CO.H / 2.f - relY * scale);
         return { screenX, screenY };
     }
 
@@ -40,19 +58,42 @@ void ExampleCoroutineRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
   auto s = static_cast<ExampleCoroutineState*>(state);
   pge->Clear(olc::VERY_DARK_BLUE);
 
+  // Kamera-Steuerung
+  if (pge->GetKey(olc::Key::A).bHeld) camX -= 50.0f * fElapsedTime;
+  if (pge->GetKey(olc::Key::D).bHeld) camX += 50.0f * fElapsedTime;
+  if (pge->GetKey(olc::Key::PGUP).bHeld) camZ += 50.0f * fElapsedTime;
+  if (pge->GetKey(olc::Key::PGDN).bHeld) camZ -= 50.0f * fElapsedTime;
+  if (pge->GetKey(olc::Key::W).bHeld) camY += 50.0f * fElapsedTime;
+  if (pge->GetKey(olc::Key::S).bHeld) camY -= 50.0f * fElapsedTime;
 
-  // Gitter zeichnen
+
+  // *** Gitter zeichnen mit steuerbaren Linien ***
   for (float z = startZ; z < depth; z += gridSize) {
+    if (drawXLines) { // Vertikale Linien in x-Richtung
+        for (float x = -gridWidth / 2; x <= gridWidth / 2; x += gridSize) {
+            auto p1 = Project(x, -gridHeight / 2, z);
+            auto p2 = Project(x, gridHeight / 2, z);
+            pge->DrawLine(p1, p2, olc::VERY_DARK_GREY);
+        }
+    }
+    if (drawYLines) { // Horizontale Linien in y-Richtung
+        for (float y = -gridHeight / 2; y <= gridHeight / 2; y += gridSize) {
+            auto p1 = Project(-gridWidth / 2, y, z);
+            auto p2 = Project(gridWidth / 2, y, z);
+            pge->DrawLine(p1, p2, olc::DARK_GREY);
+        }
+    }
+}
+
+if (drawZLines) { // Tiefenlinien in z-Richtung
     for (float x = -gridWidth / 2; x <= gridWidth / 2; x += gridSize) {
-        auto p1 = Project(x, -gridHeight / 2, z);
-        auto p2 = Project(x,  gridHeight / 2, z);
-        pge->DrawLine(p1, p2, olc::VERY_DARK_GREY);
+        for (float y = -gridHeight / 2; y <= gridHeight / 2; y += gridSize) {
+            auto p1 = Project(x, y, startZ);
+            auto p2 = Project(x, y, depth);
+            pge->DrawLine(p1, p2, olc::GREY);
+        }
     }
-    for (float y = -gridHeight / 2; y <= gridHeight / 2; y += gridSize) {
-        auto p1 = Project(-gridWidth / 2, y, z);
-        auto p2 = Project(gridWidth / 2,  y, z);
-        pge->DrawLine(p1, p2, olc::VERY_DARK_GREY);
-    }
+
 }
 
 // Bewegung des Punktes zum Endpunkt
