@@ -6,6 +6,8 @@
 
 using namespace stemaj;
 
+
+
 float fov = 100.0f;   // Brennweite
     float depth = 500.0f; // Maximale Tiefe des Gitters
     float gridSize = 100.0f;  // Abstand der Gitterlinien
@@ -20,13 +22,20 @@ float fov = 100.0f;   // Brennweite
 
     // Kamera-Position
     float camX = 0.0f, camY = 0.0f, camZ = 0.0f; // Startet leicht nach hinten versetzt
+    float baseCamX = camX; // Basis-Kamerahöhe (zum Zurücksetzen)
     float baseCamY = camY; // Basis-Kamerahöhe (zum Zurücksetzen)
+
+    float currentCamX;
+    float currentCamY;
 
  // "Bump"-Effekt
  bool isBumping = false;
  float bumpTime = 0.0f;
  float bumpDuration = 0.3f; // Gesamtdauer des Bumps
- float bumpHeight = 10.0f;  // Maximale Hubhöhe
+ 
+ olc::vf2d vfBumpDir; // Richtung des Bumps
+ float bumpBaseAmplitude = 5.0f; // Maximale Stärke
+ 
 
     // Startposition
     float startX = 6000.0f, startY = 200.0f, startZPos = 2500.0f;
@@ -82,6 +91,24 @@ void ExampleCoroutineRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
 
 // "Bump"-Effekt starten
 if (pge->GetMouse(0).bReleased && !isBumping) {
+
+    currentCamX = camX; // Speichere aktuelle Position
+    currentCamY = camY;
+
+    vfBumpDir = pge->GetMousePos() - olc::vf2d(s->P1.x,-s->P1.y);
+
+    // vfBumpDir.x = camX + richt.x;
+    // vfBumpDir.y = camY + richt.y;
+    // // vfBumpDir = {1,0}; // ok
+    // // vfBumpDir = {-1,0}; // ok
+    // // vfBumpDir = {0,1}; // ok
+    // // vfBumpDir = {0,-1}; // ok
+    // // vfBumpDir = {1,1}; // ok
+    // // vfBumpDir = {-1,-1}; // ok
+    // // vfBumpDir = {-1,1}; // ok
+    // // vfBumpDir = {1,-1}; // ok
+
+
     isBumping = true;
     bumpTime = 0.0f;
 }
@@ -91,9 +118,19 @@ if (isBumping) {
     bumpTime += fElapsedTime;
     if (bumpTime < bumpDuration) {
         // Sinusförmige Bewegung für sanftes Hoch- und Runtergehen
-        camY = baseCamY + bumpHeight * sinf((bumpTime / bumpDuration) * 3.14159f);
+
+        olc::vf2d bumpDirection = vfBumpDir.norm() * -1.0f; // Umkehren der Richtung
+
+        // Begrenzung der Bump-Stärke auf einen sinnvollen Bereich
+        float bumpFactor = 1.0f + vfBumpDir.mag();
+        float bumpStrength = bumpBaseAmplitude / std::clamp(bumpFactor, 0.1f, 0.2f); // Werte zwischen 1.5 und 5
+
+        camX = currentCamX + bumpDirection.x * bumpStrength * sinf((bumpTime / bumpDuration) * 3.14159f);
+        camY = currentCamY + bumpDirection.y * bumpStrength * sinf((bumpTime / bumpDuration) * 3.14159f);
+
     } else {
-        camY = baseCamY;
+        camX = currentCamX;
+        camY = currentCamY;
         isBumping = false;
     }
 }
