@@ -7,7 +7,6 @@
 using namespace stemaj;
 
 
-
 float fov = 100.0f;   // Brennweite
     float depth = 500.0f; // Maximale Tiefe des Gitters
     float gridSize = 100.0f;  // Abstand der Gitterlinien
@@ -194,10 +193,12 @@ if (distance > 1.0f) { // Stoppen, wenn nahe genug
   float maxZ = 2000.0f; // Größte Z-Koordinate (fernste Position)
   float factor = 1.0f + (1.0f - ((posZ - minZ) / (maxZ - minZ))) * 40.0f;
   if (factor < 1.0f) factor = 1.0f;
-  
+	
+	
   // Kreis zeichnen
   auto objPos = Project(posX, posY, posZ);
-  pge->FillCircle(objPos, int(1 * factor), olc::RED);
+  //pge->FillCircle(objPos, int(1 * factor), olc::RED);
+  if (posZ > camZ) 
   OlcHelper::FillCircleDecal(pge, int(1 * factor), PT<int>{objPos.x, objPos.y}, olc::RED);
 
   // for (auto& ball : s->balls) {
