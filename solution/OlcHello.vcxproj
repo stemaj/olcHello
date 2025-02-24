@@ -511,10 +511,7 @@
     <ClInclude Include="..\game\src\state\exampleMouseState.hpp" />
     <ClInclude Include="..\game\src\state\exampleCollisionState.hpp" />
     <ClInclude Include="..\game\src\state\exampleCoroutineState.hpp" />
-    <ClInclude Include="..\olcTemplate\game\animation.hpp" />
-    <ClInclude Include="..\olcTemplate\game\assets.hpp" />
     <ClInclude Include="..\olcTemplate\game\coordinates.hpp" />
-    <ClInclude Include="..\olcTemplate\game\fonts.hpp" />
     <ClInclude Include="..\olcTemplate\game\game.hpp" />
     <ClInclude Include="..\olcTemplate\game\geometryWrapper.hpp" />
     <ClInclude Include="..\olcTemplate\game\input.hpp" />
@@ -527,6 +524,10 @@
     <ClInclude Include="..\olcTemplate\game\gui.hpp" />
     <ClInclude Include="..\olcTemplate\game\quaternion.hpp" />
     <ClInclude Include="..\olcTemplate\game\guiElements.hpp" />
+    <ClInclude Include="..\olcTemplate\game\animation.hpp" />
+    <ClInclude Include="..\olcTemplate\game\assets.hpp" />
+    <ClInclude Include="..\olcTemplate\game\fonts.hpp" />
+    <ClInclude Include="..\olcTemplate\game\room3d.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\introRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\levelRender.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\render\loadingRender.hpp" />
@@ -536,10 +537,10 @@
     <ClInclude Include="..\olcTemplate\game\src\render\helper\olcHelper.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\introState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp" />
-    <ClInclude Include="..\olcTemplate\game\src\state\loading.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\logoState.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\state.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\state\mainMenuState.hpp" />
+    <ClInclude Include="..\olcTemplate\game\src\state\loading.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\daytime.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\dialog.hpp" />
     <ClInclude Include="..\olcTemplate\game\src\tools\fader.hpp" />
@@ -584,11 +585,7 @@
     </ClCompile>
     <ClCompile Include="..\game\src\state\src\exampleCoroutineState.cpp">
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
-    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\coordinates.cpp">
-    </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\fonts.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\game.cpp">
     </ClCompile>
@@ -608,7 +605,13 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\physicalWorld.cpp">
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\fonts.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\room3d.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\engine\src\olcPixelGameEngine.cpp">
     </ClCompile>
@@ -626,13 +629,13 @@
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\introState.cpp">
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\loading.cpp">
-    </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\logoState.cpp">
-    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\logoState.cpp">
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\loading.cpp">
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\daytime.cpp">
     </ClCompile>
@@ -664,15 +667,14 @@
     <None Include="..\assets\sheets\bik.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_bg_25pc.lua" />
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.lua" />
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua" />
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.lua" />
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_3.lua" />
     <None Include="..\scripts\exampleCollision.lua" />
     <None Include="..\scripts\exampleDialog.lua" />
     <None Include="..\scripts\examplePathLevel.lua" />
     <None Include="..\scripts\intro.lua" />
-    <None Include="..\scripts\settings.lua" />
     <None Include="..\scripts\mainMenu.lua" />
     <None Include="..\scripts\exampleMouse.lua" />
+    <None Include="..\scripts\settings.lua" />
     <None Include="..\scripts\profile\1\exampleCollision.lua" />
     <None Include="..\assets\fonts\CutiePatootie-Rgjv.ttf" />
     <None Include="..\olcTemplate\assets\fonts\dogica.ttf" />
@@ -707,13 +709,9 @@
       <DeploymentContent>true</DeploymentContent>
       <Link>olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png</Link>
     </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_3.png">
       <DeploymentContent>true</DeploymentContent>
-      <Link>olcTemplate\assets\sheets\Sing_With_Me.png</Link>
-    </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png">
-      <DeploymentContent>true</DeploymentContent>
-      <Link>olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png</Link>
+      <Link>olcTemplate\assets\sheets\Sing_With_Me_3.png</Link>
     </Image>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -172,10 +172,7 @@
     <None Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.lua">
       <Filter>olcTemplate\assets\sheets</Filter>
     </None>
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me.lua">
-      <Filter>olcTemplate\assets\sheets</Filter>
-    </None>
-    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.lua">
+    <None Include="..\olcTemplate\assets\sheets\Sing_With_Me_3.lua">
       <Filter>olcTemplate\assets\sheets</Filter>
     </None>
     <None Include="..\scripts\exampleCollision.lua">
@@ -190,13 +187,13 @@
     <None Include="..\scripts\intro.lua">
       <Filter>scripts</Filter>
     </None>
-    <None Include="..\scripts\settings.lua">
-      <Filter>scripts</Filter>
-    </None>
     <None Include="..\scripts\mainMenu.lua">
       <Filter>scripts</Filter>
     </None>
     <None Include="..\scripts\exampleMouse.lua">
+      <Filter>scripts</Filter>
+    </None>
+    <None Include="..\scripts\settings.lua">
       <Filter>scripts</Filter>
     </None>
     <None Include="..\scripts\profile\1\exampleCollision.lua">
@@ -768,16 +765,7 @@
     <ClInclude Include="..\game\src\state\exampleCoroutineState.hpp">
       <Filter>game\src\state</Filter>
     </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\animation.hpp">
-      <Filter>olcTemplate\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\assets.hpp">
-      <Filter>olcTemplate\game</Filter>
-    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\coordinates.hpp">
-      <Filter>olcTemplate\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\fonts.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\game.hpp">
@@ -816,6 +804,18 @@
     <ClInclude Include="..\olcTemplate\game\guiElements.hpp">
       <Filter>olcTemplate\game</Filter>
     </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\animation.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\assets.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\fonts.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\room3d.hpp">
+      <Filter>olcTemplate\game</Filter>
+    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\render\introRender.hpp">
       <Filter>olcTemplate\game\src\render</Filter>
     </ClInclude>
@@ -843,9 +843,6 @@
     <ClInclude Include="..\olcTemplate\game\src\state\levelState.hpp">
       <Filter>olcTemplate\game\src\state</Filter>
     </ClInclude>
-    <ClInclude Include="..\olcTemplate\game\src\state\loading.hpp">
-      <Filter>olcTemplate\game\src\state</Filter>
-    </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\state\logoState.hpp">
       <Filter>olcTemplate\game\src\state</Filter>
     </ClInclude>
@@ -853,6 +850,9 @@
       <Filter>olcTemplate\game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\state\mainMenuState.hpp">
+      <Filter>olcTemplate\game\src\state</Filter>
+    </ClInclude>
+    <ClInclude Include="..\olcTemplate\game\src\state\loading.hpp">
       <Filter>olcTemplate\game\src\state</Filter>
     </ClInclude>
     <ClInclude Include="..\olcTemplate\game\src\tools\daytime.hpp">
@@ -935,13 +935,7 @@
     <ClCompile Include="..\game\src\state\src\exampleCoroutineState.cpp">
       <Filter>game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
-      <Filter>olcTemplate\game\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\coordinates.cpp">
-      <Filter>olcTemplate\game\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\fonts.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\game.cpp">
@@ -971,7 +965,16 @@
     <ClCompile Include="..\olcTemplate\game\src\physicalWorld.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\animation.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\assets.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\fonts.cpp">
+      <Filter>olcTemplate\game\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\room3d.cpp">
       <Filter>olcTemplate\game\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\engine\src\olcPixelGameEngine.cpp">
@@ -998,16 +1001,16 @@
     <ClCompile Include="..\olcTemplate\game\src\state\src\introState.cpp">
       <Filter>olcTemplate\game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\loading.cpp">
+    <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
+      <Filter>olcTemplate\game\src\state\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
       <Filter>olcTemplate\game\src\state\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\state\src\logoState.cpp">
       <Filter>olcTemplate\game\src\state\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\mainMenuState.cpp">
-      <Filter>olcTemplate\game\src\state\src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\olcTemplate\game\src\state\src\levelState.cpp">
+    <ClCompile Include="..\olcTemplate\game\src\state\src\loading.cpp">
       <Filter>olcTemplate\game\src\state\src</Filter>
     </ClCompile>
     <ClCompile Include="..\olcTemplate\game\src\tools\src\daytime.cpp">
@@ -1066,10 +1069,7 @@
     <Image Include="..\olcTemplate\assets\sheets\pretty_pretty_ch_25pc.png">
       <Filter>olcTemplate\assets\sheets</Filter>
     </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me.png">
-      <Filter>olcTemplate\assets\sheets</Filter>
-    </Image>
-    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_Emscripten.png">
+    <Image Include="..\olcTemplate\assets\sheets\Sing_With_Me_3.png">
       <Filter>olcTemplate\assets\sheets</Filter>
     </Image>
   </ItemGroup>

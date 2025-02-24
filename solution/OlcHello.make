@@ -101,6 +101,7 @@ ifeq ($(config),debug)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -186,6 +187,7 @@ ifeq ($(config),test)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -271,6 +273,7 @@ ifeq ($(config),release)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -356,6 +359,7 @@ ifeq ($(config),debug64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -441,6 +445,7 @@ ifeq ($(config),test64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -526,6 +531,7 @@ ifeq ($(config),release64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -612,6 +618,7 @@ ifeq ($(config),debuguniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -698,6 +705,7 @@ ifeq ($(config),testuniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -784,6 +792,7 @@ ifeq ($(config),releaseuniv64)
 	$(OBJDIR)/olcTemplate/game/src/render/src/loadingRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o \
 	$(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o \
+	$(OBJDIR)/olcTemplate/game/src/room3d.o \
 	$(OBJDIR)/olcTemplate/game/src/sound.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/introState.o \
 	$(OBJDIR)/olcTemplate/game/src/state/src/levelState.o \
@@ -1015,6 +1024,10 @@ $(OBJDIR)/olcTemplate/game/src/render/src/logoRender.o: ../olcTemplate/game/src/
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 
 $(OBJDIR)/olcTemplate/game/src/render/src/mainMenuRender.o: ../olcTemplate/game/src/render/src/mainMenuRender.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src/render/src
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
+
+$(OBJDIR)/olcTemplate/game/src/room3d.o: ../olcTemplate/game/src/room3d.cpp $(GCH) $(MAKEFILE) | $(OBJDIR)/olcTemplate/game/src
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -c "$<"
 

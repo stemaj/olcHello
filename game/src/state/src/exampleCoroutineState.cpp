@@ -1,11 +1,12 @@
 #include <game/src/render/exampleCoroutineRender.hpp>
 #include <game/src/state/exampleCoroutineState.hpp>
-#include <random>
+#include <olcTemplate/game/room3d.hpp>
 
 using namespace stemaj;
 
 ExampleCoroutineState::ExampleCoroutineState() : _render(std::make_unique<ExampleCoroutineRender>())
 {
+  _room3d = std::make_unique<Room3d>();
   LoadLevelData();
 }
 
@@ -17,6 +18,25 @@ ExampleCoroutineState::~ExampleCoroutineState()
 std::optional<std::unique_ptr<State>> ExampleCoroutineState::Update(
   const Input& input, float fElapsedTime)
 {
+  // Kamera-Steuerung
+  if (input.aHold) _room3d->MoveCamX(-fElapsedTime);
+  if (input.dHold) _room3d->MoveCamX(+fElapsedTime);
+  if (input.sHold) _room3d->MoveCamY(-fElapsedTime);
+  if (input.wHold) _room3d->MoveCamY(+fElapsedTime);
+  if (input.pgDownHold) _room3d->MoveCamZ(-fElapsedTime);
+  if (input.pgUpHold) _room3d->MoveCamZ(+fElapsedTime);
+
+  // "Bump"-Effekt starten
+  if (input.leftMouseReleased && !_room3d->isBumping)
+  {
+    _room3d->StartBumpEffect( PT<float>{input.mouseX - P1.x, input.mouseY - P1.y} );
+  }
+
+  _room3d->UpdateBumpEffect(fElapsedTime);
+
+  _room3d->Debug();
+
+
   if (input.leftMouseHeld) {
     P2 = { input.mouseX, input.mouseY };
     velocity = {0.0f, 0.0f};
