@@ -57,6 +57,32 @@ std::optional<std::unique_ptr<State>> ExampleCoroutineState::Update(
     P2.y += velocity.y * fElapsedTime; // Position aktualisieren
   }
 
+  // Bewegung des Punktes zum Endpunkt
+  float dx = _endX - _posX;
+  float dy = _endY - _posY;
+  float dz = _endZ - _posZ;
+  float distance = _room3d->Distance(_posX, _posY, _posZ, _endX, _endY, _endZ);
+  if (distance > 1.0f)
+  {
+    // Stoppen, wenn nahe genug
+    float norm = sqrtf(dx * dx + dy * dy + dz * dz);
+    if (norm > 0.0f)
+    {
+      dx /= norm;
+      dy /= norm;
+      dz /= norm;
+    }
+    _posX += dx * _speed * fElapsedTime;
+    _posY += dy * _speed * fElapsedTime;
+    _posZ += dz * _speed * fElapsedTime;
+  }
+
+  // Kreisgröße anpassen basierend auf der Z-Koordinate (je näher, desto größer)
+  factorCircleSize = 1.0f + (1.0f - ((_posZ - _minZ) / (_maxZ - _minZ))) * 40.0f;
+  if (factorCircleSize < 1.0f) factorCircleSize = 1.0f;
+
+  objPos = _room3d->Project(_posX, _posY, _posZ);
+
   return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }
 

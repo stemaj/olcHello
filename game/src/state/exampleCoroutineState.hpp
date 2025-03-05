@@ -32,11 +32,27 @@ public:
   std::vector<std::pair<PT<float>,PT<float>>> debugLinesX() { return _room3d->debugLinesX; }
   std::vector<std::pair<PT<float>,PT<float>>> debugLinesY() { return _room3d->debugLinesY; }
   std::vector<std::pair<PT<float>,PT<float>>> debugLinesZ() { return _room3d->debugLinesZ; }
-  uint32_t GetColorX() { return _room3d->GetColorX(); }
-  uint32_t GetColorY() { return _room3d->GetColorY(); }
-  uint32_t GetColorZ() { return _room3d->GetColorZ(); }
+  uint32_t GetColorXLines() { return _room3d->GetColorXLines(); }
+  uint32_t GetColorYLines() { return _room3d->GetColorYLines(); }
+  uint32_t GetColorZLines() { return _room3d->GetColorZLines(); }
+
+  float factorCircleSize = 1.0f;
+  PT<int> objPos;
+  bool objVisible() { return _posZ > _room3d->GetCamZ(); } ;
   
 private:
+
+// Startposition
+  float _startX = 6000.0f, _startY = 200.0f, _startZ = 2500.0f;
+  // Endposition
+  float _endX = 150.0f, _endY = -150.0f, _endZ = 50.0f;
+  // Aktuelle Position
+  float _posX = _startX, _posY = _startY, _posZ = _startZ;
+  // Geschwindigkeit
+  float _speed = 800.0f;
+
+  float _minZ = 20.0f;  // Kleinste Z-Koordinate (nächstgelegene Position)
+  float _maxZ = 2000.0f; // Größte Z-Koordinate (fernste Position)
 
   std::unique_ptr<Room3d> _room3d;
 
