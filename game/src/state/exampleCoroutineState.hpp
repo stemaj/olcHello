@@ -38,21 +38,20 @@ public:
 
   float factorCircleSize = 1.0f;
   PT<int> objPos;
-  bool objVisible() { return _posZ > _room3d->GetCamZ(); } ;
+  bool objVisible() { return _pos[2] > _room3d->GetCamZ(); } ;
+
+  PT<int> ProjectedPos() const;
   
 private:
 
-// Startposition
+  // Startposition
   float _startX = 6000.0f, _startY = 200.0f, _startZ = 2500.0f;
   // Endposition
   float _endX = 150.0f, _endY = -150.0f, _endZ = 50.0f;
   // Aktuelle Position
-  float _posX = _startX, _posY = _startY, _posZ = _startZ;
+  std::array<float,3> _pos = {_startX, _startY, _startZ};
   // Geschwindigkeit
   float _speed = 800.0f;
-
-  float _minZ = 20.0f;  // Kleinste Z-Koordinate (nächstgelegene Position)
-  float _maxZ = 2000.0f; // Größte Z-Koordinate (fernste Position)
 
   std::unique_ptr<Room3d> _room3d;
 

@@ -33,8 +33,8 @@ void ExampleCoroutineRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
   
   if (s->objVisible())
   {
-    OlcHelper::FillCircleDecal(pge, int(s->factorCircleSize),
-      PT<int>{s->objPos.x, s->objPos.y}, olc::RED);
+    OlcHelper::FillCircleDecal(pge, int(s->factorCircleSize / 2.0),
+      s->ProjectedPos(), olc::RED);
   }
 
   pge->DrawLine((int)s->P1.x, (int)s->P1.y, (int)s->P2.x, (int)s->P2.y, olc::WHITE);
