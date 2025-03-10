@@ -62,6 +62,14 @@ std::optional<std::unique_ptr<State>> ExampleCoroutineState::Update(
     P2.y += velocity.y * fElapsedTime; // Position aktualisieren
   }
 
+  if (input.leftMouseReleased)
+  {
+    _endX = 100.0f;
+    _endY = 2000.0f;
+    _endZ = 5000.0f;
+    _speed = 5000.0f;
+  }
+
   _pos = _room3d->MoveObject(_pos, {_endX,_endY,_endZ}, _speed, fElapsedTime);
   objPos = _room3d->Projected(_pos[0], _pos[1], _pos[2]);
 
