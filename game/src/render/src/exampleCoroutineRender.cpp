@@ -40,4 +40,6 @@ void ExampleCoroutineRender::DoRender(olc::PixelGameEngine* pge, float fElapsedT
   pge->DrawLine((int)s->P1.x, (int)s->P1.y, (int)s->P2.x, (int)s->P2.y, olc::WHITE);
   pge->FillCircle((int)s->P1.x, (int)s->P1.y, 5, olc::RED);
   pge->FillCircle((int)s->P2.x, (int)s->P2.y, 5, olc::BLUE);
+
+  pge->DrawRotatedDecal({s->P2.x, s->P2.y}, AS.Decal("japan_1"), atanf( (s->P2.y-s->P1.y) / (s->P2.x-s->P1.x) ), {(float)CO.W/2, (float)CO.H/2.0f}, {0.2f, 0.2f});
 }
