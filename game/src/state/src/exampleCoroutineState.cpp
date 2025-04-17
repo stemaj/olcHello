@@ -17,7 +17,7 @@ ExampleCoroutineState::~ExampleCoroutineState()
 
 PT<int> ExampleCoroutineState::ProjectedPos() const
 {
-  return _room3d->Projected(_pos[0], _pos[1], _pos[2]);
+  return _room3d->Projected(_pos);
 }
 
 std::optional<std::unique_ptr<State>> ExampleCoroutineState::Update(
@@ -71,9 +71,9 @@ std::optional<std::unique_ptr<State>> ExampleCoroutineState::Update(
   }
 
   _pos = _room3d->MoveObject(_pos, {_endX,_endY,_endZ}, _speed, fElapsedTime);
-  objPos = _room3d->Projected(_pos[0], _pos[1], _pos[2]);
+  objPos = _room3d->Projected(_pos);
 
-  factorCircleSize = _room3d->ObjectSizeFactor(_pos[2]);
+  factorCircleSize = _room3d->calculateHeightFactor(1,20,5,_pos.z,500);
 
   return RequestForMainMenu(input.escapePressed, fElapsedTime);
 }

@@ -58,10 +58,9 @@ void ExampleScreenElementsLevelRender::DoRender(olc::PixelGameEngine* pge, float
 			(float)t._frameboxSize.y },
 			olc::Pixel(235,242,244, 224) );
 
-		pge->DrawDecal({ (float)t._boxUpperLeft.x,
-				(float)t._boxUpperLeft.y },
-									 FT.Decal(t._text,
-														t._fontName, t._fontSize), {1.0f,1.0f});
+		pge->DrawDecal({ (float)t._boxUpperLeft.x, (float)t._boxUpperLeft.y },
+        FT.Renderable(t._text, t._fontName, t._fontSize)->Decal(),
+          {1.0f,1.0f});
 
 		auto lineEnd = std::abs(t._lineAnchorPoints[0].x-t._lineAnchorPoints[1].x);
 

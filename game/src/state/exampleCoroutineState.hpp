@@ -38,7 +38,7 @@ public:
 
   float factorCircleSize = 1.0f;
   PT<int> objPos;
-  bool objVisible() { return _pos[2] > _room3d->GetCamZ(); } ;
+  bool objVisible() { return _pos.z > _room3d->GetCamZ(); } ;
 
   PT<int> ProjectedPos() const;
   
@@ -49,7 +49,7 @@ private:
   // Endposition
   float _endX = 150.0f, _endY = -150.0f, _endZ = 50.0f;
   // Aktuelle Position
-  std::array<float,3> _pos = {_startX, _startY, _startZ};
+  WorldPosition _pos = {_startX, _startY, _startZ};
   // Geschwindigkeit
   float _speed = 800.0f;
 
