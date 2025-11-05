@@ -1,0 +1,147 @@
+name: CI / Cross-Platform Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Trigger für Releases wie v1.2.3
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  # ============================
+  # Linux Build + AppImage
+  # ============================
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential libx11-dev libgl1-mesa-dev libpng-dev libfreetype-dev libasound2-dev wget zip
+
+    - name: Build Release
+      run: make -C solution -j8 config=release
+
+    - name: Download appimagetool
+      run: |
+        wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod +x appimagetool-x86_64.AppImage
+
+    - name: Build AppImage + ZIP
+      run: |
+        TAG=${GITHUB_REF#refs/tags/}
+        mkdir -p dist
+        ./appimagetool-x86_64.AppImage OlcHello.AppDir dist/OlcHello-$TAG.AppImage
+        zip -r dist/OlcHello-$TAG-linux.zip OlcHello.AppDir
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: OlcHello-Linux
+        path: dist/*
+
+  # ============================
+  # Windows Build + ZIP
+  # ============================
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Build Release
+      run: msbuild solution\OlcHello.sln /p:Configuration=Release /p:Platform=x64
+
+    - name: Package ZIP
+      run: |
+        powershell Compress-Archive -Path solution\bin\Release\* -DestinationPath dist\OlcHello-${{ github.ref_name }}-win.zip
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: OlcHello-Windows
+        path: dist/*
+
+  # ============================
+  # macOS Build + ZIP
+  # ============================
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+
+    - name: Build Release
+      run: xcodebuild -project solution/OlcHello.xcodeproj -scheme OlcHello -configuration Release -derivedDataPath build
+
+    - name: Package ZIP
+      run: |
+        cd build/Build/Products/Release
+        zip -r ../../../dist/OlcHello-${{ github.ref_name }}-mac.zip *
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: OlcHello-macOS
+        path: dist/*
+
+  # # ============================
+  # # Emscripten / WebAssembly
+  # # ============================
+  # build-wasm:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       submodules: true
+
+  #   - name: Install Emscripten
+  #     uses: emscripten/emsdk@v2
+  #     with:
+  #       version: latest
+
+  #   - name: Build WASM
+  #     run: |
+  #       source $HOME/emsdk/emsdk_env.sh
+  #       emmake make -C solution -j8 config=wasm
+
+  #   - name: Package WASM ZIP
+  #     run: |
+  #       TAG=${GITHUB_REF#refs/tags/}
+  #       mkdir -p dist
+  #       zip -r dist/OlcHello-$TAG-wasm.zip solution/bin/wasm/*
+
+  #   - name: Upload artifacts
+  #     uses: actions/upload-artifact@v3
+  #     with:
+  #       name: OlcHello-WASM
+  #       path: dist/*
+
+  # ============================
+  # Release Job
+  # ============================
+  release:
+    runs-on: ubuntu-latest
+    needs: [build-linux, build-windows, build-macos] #, build-wasm]
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      with:
+        path: dist/
+
+    - name: Create GitHub Release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
+        artifacts: dist/*
