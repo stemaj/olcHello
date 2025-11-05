@@ -10,7 +10,7 @@ ExampleScreenElementsLevelState::ExampleScreenElementsLevelState() :
   _render(std::make_unique<ExampleScreenElementsLevelRender>())
 {
   _fader.StartFadeIn();
-  playMusic("assets/wav/1.wav");
+  SO.StartMusic("assets/wav/1.wav", 1.0f, 1.0f);
   LoadLevelData();
 }
 
