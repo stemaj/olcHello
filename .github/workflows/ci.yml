@@ -22,7 +22,8 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y build-essential libx11-dev libgl1-mesa-dev libpng-dev libfreetype-dev libasound2-dev wget zip
+        sudo add-apt-repository universe
+        sudo apt install -y build-essential libx11-dev libgl1-mesa-dev libpng-dev libfreetype-dev libasound2-dev wget zip libfuse2t64
 
     - name: Build Release
       run: make -C solution -j8 config=release
@@ -82,7 +83,7 @@ jobs:
         submodules: true
 
     - name: Build Release
-      run: xcodebuild -project solution/OlcHello.xcodeproj -scheme OlcHello -configuration Release -derivedDataPath build
+      run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release -derivedDataPath build
 
     - name: Package ZIP
       run: |
