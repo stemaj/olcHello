@@ -37,7 +37,7 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         mkdir -p dist
-        ./appimagetool-x86_64.AppImage solution/bin/Release/OlcHello dist/OlcHello-$TAG.AppImage
+        ./appimagetool-x86_64.AppImage solution/bin/Release/ dist/OlcHello-$TAG.AppImage
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -82,6 +82,11 @@ jobs:
       with:
         submodules: true
 
+    - name: Homebrew
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+        brew install freetype && \
+        brew install libpng
+
     - name: Build Release
       run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
 
@@ -89,8 +94,7 @@ jobs:
       run: |
         cd solution
         ls -Ra
-        cd solution/bin/Release
-        zip -r ../../../dist/OlcHello-${{ github.ref_name }}-mac.zip *
+        zip -r dist/OlcHello-${{ github.ref_name }}-mac.zip solution/obj/Release
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -104,14 +108,14 @@ jobs:
   build-wasm:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         submodules: true
 
-    - name: Install Emscripten
-      uses: emscripten/emsdk@v2
+    - name: Setup emsd
+      uses: mymindstorm/setup-emsdk@v14
       with:
-        version: latest
+        version: "2.0.34"
 
     - name: Build WASM
       run: |
