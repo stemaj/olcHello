@@ -83,12 +83,9 @@ jobs:
         submodules: true
 
     - name: Homebrew
-      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
-        echo >> /Users/runner/.bash_profile && \
-        echo 'eval "$(/opt/homebrew/bin/brew shellenv bash)"' >> /Users/runner/.bash_profile && \
-        eval "$(/opt/homebrew/bin/brew shellenv bash)" && \
-        brew install freetype && \
-        brew install libpng
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        brew install freetype libpng
 
     - name: Build Release
       run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
