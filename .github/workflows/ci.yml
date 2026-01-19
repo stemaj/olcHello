@@ -37,8 +37,7 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         mkdir -p dist
-        ./appimagetool-x86_64.AppImage OlcHello.AppDir dist/OlcHello-$TAG.AppImage
-        zip -r dist/OlcHello-$TAG-linux.zip OlcHello.AppDir
+        ./appimagetool-x86_64.AppImage solution/bin/Release/OlcHello dist/OlcHello-$TAG.AppImage
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -64,6 +63,7 @@ jobs:
 
     - name: Package ZIP
       run: |
+        powershell New-Item -ItemType Directory -Force -Path dist
         powershell Compress-Archive -Path solution\bin\Release\* -DestinationPath dist\OlcHello-${{ github.ref_name }}-win.zip
 
     - name: Upload artifacts
@@ -83,11 +83,13 @@ jobs:
         submodules: true
 
     - name: Build Release
-      run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release -derivedDataPath build
+      run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
 
     - name: Package ZIP
       run: |
-        cd build/Build/Products/Release
+        cd solution
+        ls -Ra
+        cd solution/bin/Release
         zip -r ../../../dist/OlcHello-${{ github.ref_name }}-mac.zip *
 
     - name: Upload artifacts
@@ -96,44 +98,90 @@ jobs:
         name: OlcHello-macOS
         path: dist/*
 
-  # # ============================
-  # # Emscripten / WebAssembly
-  # # ============================
-  # build-wasm:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #     with:
-  #       submodules: true
+  # ============================
+  # Emscripten / WebAssembly
+  # ============================
+  build-wasm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
 
-  #   - name: Install Emscripten
-  #     uses: emscripten/emsdk@v2
-  #     with:
-  #       version: latest
+    - name: Install Emscripten
+      uses: emscripten/emsdk@v2
+      with:
+        version: latest
 
-  #   - name: Build WASM
-  #     run: |
-  #       source $HOME/emsdk/emsdk_env.sh
-  #       emmake make -C solution -j8 config=wasm
+    - name: Build WASM
+      run: |
+        source $HOME/emsdk/emsdk_env.sh \
+        && \
+        find \
+        . \
+        -name \
+        \"*.cpp\" -o -name \"*.c\" \
+        > \
+        file_list.txt \
+        && \
+        em++ \
+        -v \
+        -std=c++2a \
+        -O2 \
+        -sUSE_FREETYPE=1 \
+        -sUSE_SDL_MIXER=2 \
+        -sALLOW_MEMORY_GROWTH=1 \
+        -sMAX_WEBGL_VERSION=2 \
+        -sMIN_WEBGL_VERSION=2 \
+        -sUSE_LIBPNG=1 \
+        -sERROR_ON_UNDEFINED_SYMBOLS=0 \
+        -I./ \
+        -I/usr/include/SDL2 \
+        -IolcTemplate/sdk/imgui-1.90.4 \
+        -IolcTemplate/sdk/imgui-1.90.4/backends \
+        -IolcTemplate/sdk/sol2-3.3.0 \
+        -IolcTemplate/sdk/lua-5.4.2/include \
+        -IolcTemplate/sdk/soloud/include \
+        -IolcTemplate/sdk/box2d/include \
+        -LolcTemplate/sdk/lua-5.4.2/emscripten \
+        -LolcTemplate/sdk/soloud/emscripten \
+        -LolcTemplate/sdk/box2d/emscripten \
+        -L/usr/lib \
+        -llua54emscripten \
+        -ldl \
+        -lm \
+        -lsoloud \
+        -lbox2d \
+        $(<file_list.txt) \
+        -o \
+        ./index.html \
+        --shell-file \
+        olcTemplate/shell_minimal.html \
+        --preload-file \
+        ./assets \
+        --preload-file \
+        ./olcTemplate/assets \
+        --preload-file \
+        ./scripts \
 
-  #   - name: Package WASM ZIP
-  #     run: |
-  #       TAG=${GITHUB_REF#refs/tags/}
-  #       mkdir -p dist
-  #       zip -r dist/OlcHello-$TAG-wasm.zip solution/bin/wasm/*
+    - name: Package WASM ZIP
+      run: |
+        TAG=${GITHUB_REF#refs/tags/}
+        mkdir -p dist
+        zip -r dist/OlcHello-$TAG-wasm.zip index.*
 
-  #   - name: Upload artifacts
-  #     uses: actions/upload-artifact@v4
-  #     with:
-  #       name: OlcHello-WASM
-  #       path: dist/*
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: OlcHello-WASM
+        path: dist/*
 
   # ============================
   # Release Job
   # ============================
   release:
     runs-on: ubuntu-latest
-    needs: [build-linux, build-windows, build-macos] #, build-wasm]
+    needs: [build-linux, build-windows, build-macos, build-wasm]
     steps:
     - name: Download all artifacts
       uses: actions/download-artifact@v4
