@@ -37,7 +37,7 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         mkdir -p dist
-        ./appimagetool-x86_64.AppImage solution/bin/Release/ dist/OlcHello-$TAG.AppImage
+        ./appimagetool-x86_64.AppImage solution/bin/Release/* dist/OlcHello-$TAG.AppImage
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -84,6 +84,9 @@ jobs:
 
     - name: Homebrew
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && \
+        echo >> /Users/runner/.bash_profile && \
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv bash)"' >> /Users/runner/.bash_profile && \
+        eval "$(/opt/homebrew/bin/brew shellenv bash)" && \
         brew install freetype && \
         brew install libpng
 
@@ -119,8 +122,6 @@ jobs:
 
     - name: Build WASM
       run: |
-        source $HOME/emsdk/emsdk_env.sh \
-        && \
         find \
         . \
         -name \
