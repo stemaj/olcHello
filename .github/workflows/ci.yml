@@ -33,6 +33,12 @@ jobs:
         wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
         chmod +x appimagetool-x86_64.AppImage
 
+    - name: Package ZIP
+      run: |
+        TAG=${GITHUB_REF#refs/tags/}
+        mkdir -p dist
+        zip -r dist/OlcHello-$TAG-linux.zip solution/bin/Release/*
+
     - name: Build AppImage + ZIP
       run: |
         TAG=${GITHUB_REF#refs/tags/}
@@ -84,9 +90,16 @@ jobs:
 
     - name: Homebrew
       run: |
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-        brew install freetype libpng
+        brew tap-new local/legacy
+
+        brew extract --version=1.6.43 libpng local/legacy
+        brew extract --version=2.13.2 freetype local/legacy
+
+        brew install local/legacy/libpng@1.6.43
+        brew install local/legacy/freetype@2.13.2
+
+        ln -s /usr/local/Cellar/libpng@1.6.43/1.6.43 /usr/local/Cellar/libpng/1.6.43
+        ln -s /usr/local/Cellar/freetype@2.13.2/2.13.2 /usr/local/Cellar/freetype/2.13.2
 
     - name: Build Release
       run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
