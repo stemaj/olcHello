@@ -67,40 +67,40 @@ jobs:
         name: OlcHello-Windows
         path: dist/*
 
-  # ============================
-  # macOS Build + ZIP
-  # ============================
-  build-macos:
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: true
+  # # ============================
+  # # macOS Build + ZIP
+  # # ============================
+  # build-macos:
+  #   runs-on: macos-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       submodules: true
 
-    - name: Homebrew
-      run: |
-        brew update
-        brew unlink libpng || true
-        brew tap-new local/legacy
-        brew extract --version=1.6.43 libpng local/legacy
-        brew extract --version=2.13.2 freetype local/legacy
-        brew install --skip-link local/legacy/libpng@1.6.43
-        brew install --skip-link local/legacy/freetype@2.13.2
+  #   - name: Homebrew
+  #     run: |
+  #       brew update
+  #       brew unlink libpng || true
+  #       brew tap-new local/legacy
+  #       brew extract --version=1.6.43 libpng local/legacy
+  #       brew extract --version=2.13.2 freetype local/legacy
+  #       brew install --skip-link local/legacy/libpng@1.6.43
+  #       brew install --skip-link local/legacy/freetype@2.13.2
 
-    - name: Build Release
-      run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
+  #   - name: Build Release
+  #     run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
 
-    - name: Package ZIP
-      run: |
-        cd solution
-        ls -Ra
-        zip -r dist/OlcHello-${{ github.ref_name }}-mac.zip solution/obj/Release
+  #   - name: Package ZIP
+  #     run: |
+  #       cd solution
+  #       ls -Ra
+  #       zip -r dist/OlcHello-${{ github.ref_name }}-mac.zip solution/obj/Release
 
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: OlcHello-macOS
-        path: dist/*
+  #   - name: Upload artifacts
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: OlcHello-macOS
+  #       path: dist/*
 
   # ============================
   # Emscripten / WebAssembly
