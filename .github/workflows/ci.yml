@@ -28,22 +28,11 @@ jobs:
     - name: Build Release
       run: make -C solution -j8 config=release
 
-    - name: Download appimagetool
-      run: |
-        wget -q https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
-        chmod +x appimagetool-x86_64.AppImage
-
     - name: Package ZIP
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         mkdir -p dist
         zip -r dist/OlcHello-$TAG-linux.zip solution/bin/Release/*
-
-    - name: Build AppImage + ZIP
-      run: |
-        TAG=${GITHUB_REF#refs/tags/}
-        mkdir -p dist
-        ./appimagetool-x86_64.AppImage solution/bin/Release dist/OlcHello-$TAG.AppImage
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
@@ -90,16 +79,13 @@ jobs:
 
     - name: Homebrew
       run: |
+        brew update
+        brew unlink libpng || true
         brew tap-new local/legacy
-
         brew extract --version=1.6.43 libpng local/legacy
         brew extract --version=2.13.2 freetype local/legacy
-
-        brew install local/legacy/libpng@1.6.43
-        brew install local/legacy/freetype@2.13.2
-
-        ln -s /usr/local/Cellar/libpng@1.6.43/1.6.43 /usr/local/Cellar/libpng/1.6.43
-        ln -s /usr/local/Cellar/freetype@2.13.2/2.13.2 /usr/local/Cellar/freetype/2.13.2
+        brew install --no-link local/legacy/libpng@1.6.43
+        brew install --no-link local/legacy/freetype@2.13.2
 
     - name: Build Release
       run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
