@@ -84,8 +84,8 @@ jobs:
         brew tap-new local/legacy
         brew extract --version=1.6.43 libpng local/legacy
         brew extract --version=2.13.2 freetype local/legacy
-        brew install --no-link local/legacy/libpng@1.6.43
-        brew install --no-link local/legacy/freetype@2.13.2
+        brew install --skip-link local/legacy/libpng@1.6.43
+        brew install --skip-link local/legacy/freetype@2.13.2
 
     - name: Build Release
       run: xcodebuild -project solution/OlcHello.xcodeproj -configuration Release
