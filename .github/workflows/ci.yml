@@ -196,4 +196,4 @@ jobs:
       with:
         tag: ${{ github.ref_name }}
         name: Release ${{ github.ref_name }}
-        artifacts: dist/*.zip
+        artifacts: dist/**/*.zip
