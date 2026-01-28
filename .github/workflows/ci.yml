@@ -32,12 +32,13 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         mkdir -p dist
-        zip -r dist/OlcHello-$TAG-linux.zip solution/bin/Release/*
+        chmod +x solution/bin/Release/OlcHello
+        zip -r dist/OlcHello-$TAG-linux.zip solution/bin/Release/OlcHello
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: OlcHello-Linux
+        name: OlcHello-Linux-$TAG
         path: dist/OlcHello-$TAG-linux.zip
 
   # ============================
@@ -58,14 +59,15 @@ jobs:
 
     - name: Package ZIP
       run: |
+        TAG=${GITHUB_REF#refs/tags/}
         powershell New-Item -ItemType Directory -Force -Path dist
-        powershell Compress-Archive -Path solution\bin\Release\* -DestinationPath dist\OlcHello-${{ github.ref_name }}-win.zip
+        powershell Compress-Archive -Path solution\bin\Release\OlcHello.exe -DestinationPath dist\OlcHello-$TAG-win.zip
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: OlcHello-Windows
-        path: dist/OlcHello-${{ github.ref_name }}-win.zip
+        name: OlcHello-Windows-$TAG
+        path: dist/OlcHello-$TAG-win.zip
 
   # # ============================
   # # macOS Build + ZIP
@@ -175,7 +177,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: OlcHello-WASM
+        name: OlcHello-WASM-$TAG
         path: dist/OlcHello-$TAG-wasm.zip
 
   # ============================
