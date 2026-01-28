@@ -38,7 +38,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: OlcHello-Linux
-        path: dist/*
+        path: dist/OlcHello-$TAG-linux.zip
 
   # ============================
   # Windows Build + ZIP
@@ -65,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: OlcHello-Windows
-        path: dist/*
+        path: dist/OlcHello-${{ github.ref_name }}-win.zip
 
   # # ============================
   # # macOS Build + ZIP
@@ -176,7 +176,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: OlcHello-WASM
-        path: dist/*
+        path: dist/OlcHello-$TAG-wasm.zip
 
   # ============================
   # Release Job
