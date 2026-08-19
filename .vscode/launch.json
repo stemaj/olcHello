@@ -1,16 +1,18 @@
 {
-  // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
-  // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
-  // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug",
-      "type": "gdb",
+      "name": "Debug C++",
+      "type": "cppdbg",
       "request": "launch",
-      "target": "./solution/bin/Debug/OlcHello",
-      "cwd": "${workspaceRoot}",
-      "valuesFormatting": "parseText"
+      "program": "${workspaceFolder}/solution/bin/Debug/OlcHello",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "build"
     }
   ]
 }
