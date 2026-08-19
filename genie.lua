@@ -120,11 +120,11 @@ project "OlcHello"
       "-Wall",
     }
     includedirs {
-      "/usr/local/Cellar/libpng/1.6.43/include"
+      "/opt/homebrew/Cellar/libpng/1.6.58/include"
     }
     libdirs {
-      "/usr/local/Cellar/freetype/2.13.2/lib",
-      "/usr/local/Cellar/libpng/1.6.43/lib",
+      "/opt/homebrew/Cellar/freetype/2.14.3/lib",
+      "/opt/homebrew/Cellar/libpng/1.6.58/lib",
       "olcTemplate/sdk/box2d/macos",
       "olcTemplate/sdk/lua-5.4.2/macos",
       "olcTemplate/sdk/soloud/macos",
